@@ -32,7 +32,29 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>iconfinder_Money-Graph_379341.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="LollipoUi">
+      <HintPath>..\..\..\..\OneDrive\Escritorio\LollipoUi.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialSkin, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialSkin.0.2.1\lib\MaterialSkin.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,14 +68,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FrmLogin.Designer.cs">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMenuPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMenuPrincipal.Designer.cs">
+      <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmLogin.resx">
+      <DependentUpon>FrmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMenuPrincipal.resx">
+      <DependentUpon>FrmMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -62,7 +96,9 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -75,6 +111,57 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bienes_de_uso128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\proveedor-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\proveedores128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cotizacion96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cuenta_corriente64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\facturas128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dollar naranja.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\informe_recepcion100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nota_credito_80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\orden-de-compra-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\devoluciones128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pedido_reaprov100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\registracion64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remito100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\solicitud_compra_100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\product2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="iconfinder_Money-Graph_379341.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
