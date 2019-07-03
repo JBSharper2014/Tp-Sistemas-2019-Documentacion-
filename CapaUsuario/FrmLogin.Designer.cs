@@ -28,15 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             this.ButtonIngresar = new MaterialSkin.Controls.MaterialRaisedButton();
             this.ButtonSalir = new MaterialSkin.Controls.MaterialRaisedButton();
             this.UsuarioTextBox = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.ClaveTextBox = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // ButtonIngresar
             // 
+            this.ButtonIngresar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonIngresar.Depth = 0;
             this.ButtonIngresar.Location = new System.Drawing.Point(101, 230);
             this.ButtonIngresar.MouseState = MaterialSkin.MouseState.HOVER;
@@ -50,6 +54,7 @@
             // 
             // ButtonSalir
             // 
+            this.ButtonSalir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ButtonSalir.Depth = 0;
             this.ButtonSalir.Location = new System.Drawing.Point(331, 230);
             this.ButtonSalir.MouseState = MaterialSkin.MouseState.HOVER;
@@ -74,6 +79,7 @@
             this.UsuarioTextBox.SelectionStart = 0;
             this.UsuarioTextBox.Size = new System.Drawing.Size(312, 23);
             this.UsuarioTextBox.TabIndex = 6;
+            this.UsuarioTextBox.Text = "nacho";
             this.UsuarioTextBox.UseSystemPasswordChar = false;
             // 
             // ClaveTextBox
@@ -89,10 +95,17 @@
             this.ClaveTextBox.SelectionStart = 0;
             this.ClaveTextBox.Size = new System.Drawing.Size(312, 23);
             this.ClaveTextBox.TabIndex = 7;
+            this.ClaveTextBox.Text = "123";
             this.ClaveTextBox.UseSystemPasswordChar = true;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
             // 
             // FrmLogin
             // 
+            this.AcceptButton = this.ButtonIngresar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(614, 335);
@@ -105,6 +118,7 @@
             this.Name = "FrmLogin";
             this.Style = MetroFramework.MetroColorStyle.Purple;
             this.Text = "Login";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -114,5 +128,6 @@
         private MaterialSkin.Controls.MaterialRaisedButton ButtonSalir;
         private MaterialSkin.Controls.MaterialSingleLineTextField UsuarioTextBox;
         private MaterialSkin.Controls.MaterialSingleLineTextField ClaveTextBox;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

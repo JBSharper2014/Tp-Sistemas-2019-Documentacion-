@@ -40,6 +40,9 @@
     <ApplicationIcon>iconfinder_Money-Graph_379341.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\..\..\..\Downloads\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
     <Reference Include="LollipoUi">
       <HintPath>..\..\..\..\OneDrive\Escritorio\LollipoUi.dll</HintPath>
     </Reference>
@@ -55,8 +58,10 @@
     <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -68,6 +73,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CapaDatosDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CapaDatosDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\FrmBienUso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\FrmBienUso.Designer.cs">
+      <DependentUpon>FrmBienUso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\FrmStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\FrmStock.Designer.cs">
+      <DependentUpon>FrmStock.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +104,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sfgndfghd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="sfgndfghd.Designer.cs">
+      <DependentUpon>sfgndfghd.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Compras\FrmBienUso.resx">
+      <DependentUpon>FrmBienUso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compras\FrmStock.resx">
+      <DependentUpon>FrmStock.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -98,6 +132,20 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="sfgndfghd.resx">
+      <DependentUpon>sfgndfghd.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="CapaDatosDataSet.xsc">
+      <DependentUpon>CapaDatosDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="CapaDatosDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>CapaDatosDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="CapaDatosDataSet.xss">
+      <DependentUpon>CapaDatosDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -162,6 +210,30 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="iconfinder_Money-Graph_379341.ico" />
+    <None Include="Resources\save3.png" />
+    <None Include="Resources\save.png" />
+    <None Include="Resources\save2.png" />
+    <None Include="Resources\cool_save.png" />
+    <None Include="Resources\editWhite32.png" />
+    <None Include="Resources\cool_seach32.png" />
+    <None Include="Resources\cancel2.png" />
+    <None Include="Resources\Borrar2.png" />
+    <None Include="Resources\Nuevo.png" />
+    <None Include="Resources\last.png" />
+    <None Include="Resources\next.png" />
+    <None Include="Resources\previous1.png" />
+    <None Include="Resources\first.png" />
+    <None Include="Resources\editBlue32.png" />
+    <None Include="Resources\smoothexit.png" />
+    <None Include="Resources\cobros64.png" />
+    <None Include="Resources\pagos64.png" />
+    <None Include="Resources\if_Money_206469.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
+      <Project>{D41ADDE8-F9FA-425B-BAD7-C93EE070CBBC}</Project>
+      <Name>CapaDatos</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
