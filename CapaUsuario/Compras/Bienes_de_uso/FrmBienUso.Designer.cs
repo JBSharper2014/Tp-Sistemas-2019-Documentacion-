@@ -34,6 +34,7 @@
             System.Windows.Forms.Label stockLabel;
             System.Windows.Forms.Label descripcionLabel;
             System.Windows.Forms.Label observacionLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBienUso));
             this.capaDatosDataSet = new CapaUsuario.CapaDatosDataSet();
             this._1_bien_usoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this._1_bien_usoTableAdapter = new CapaUsuario.CapaDatosDataSetTableAdapters._1_bien_usoTableAdapter();
@@ -51,7 +52,7 @@
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorEditItem = new System.Windows.Forms.ToolStripButton();
-            this._1_bien_usoBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.BindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCancel = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSearchItem = new System.Windows.Forms.ToolStripButton();
             this._1_bien_usoDataGridView = new System.Windows.Forms.DataGridView();
@@ -61,10 +62,11 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cod_pro_busoTextBox = new System.Windows.Forms.TextBox();
-            this.nombreTextBox = new System.Windows.Forms.TextBox();
-            this.stockTextBox = new System.Windows.Forms.TextBox();
-            this.descripcionTextBox = new System.Windows.Forms.TextBox();
-            this.observacionTextBox = new System.Windows.Forms.TextBox();
+            this.NombreTextBox = new System.Windows.Forms.TextBox();
+            this.StockTextBox = new System.Windows.Forms.TextBox();
+            this.DescripcionTextBox = new System.Windows.Forms.TextBox();
+            this.ObservacionTextBox = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             cod_pro_busoLabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
             stockLabel = new System.Windows.Forms.Label();
@@ -75,6 +77,7 @@
             ((System.ComponentModel.ISupportInitialize)(this._1_bien_usoBindingNavigator)).BeginInit();
             this._1_bien_usoBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._1_bien_usoDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // cod_pro_busoLabel
@@ -84,7 +87,7 @@
             cod_pro_busoLabel.Location = new System.Drawing.Point(165, 68);
             cod_pro_busoLabel.Name = "cod_pro_busoLabel";
             cod_pro_busoLabel.Size = new System.Drawing.Size(161, 20);
-            cod_pro_busoLabel.TabIndex = 2;
+            cod_pro_busoLabel.TabIndex = 0;
             cod_pro_busoLabel.Text = "Código de bien de uso:";
             // 
             // nombreLabel
@@ -94,7 +97,7 @@
             nombreLabel.Location = new System.Drawing.Point(259, 118);
             nombreLabel.Name = "nombreLabel";
             nombreLabel.Size = new System.Drawing.Size(67, 20);
-            nombreLabel.TabIndex = 4;
+            nombreLabel.TabIndex = 2;
             nombreLabel.Text = "Nombre:";
             // 
             // stockLabel
@@ -104,7 +107,7 @@
             stockLabel.Location = new System.Drawing.Point(277, 168);
             stockLabel.Name = "stockLabel";
             stockLabel.Size = new System.Drawing.Size(49, 20);
-            stockLabel.TabIndex = 6;
+            stockLabel.TabIndex = 4;
             stockLabel.Text = "Stock:";
             // 
             // descripcionLabel
@@ -114,7 +117,7 @@
             descripcionLabel.Location = new System.Drawing.Point(239, 218);
             descripcionLabel.Name = "descripcionLabel";
             descripcionLabel.Size = new System.Drawing.Size(87, 20);
-            descripcionLabel.TabIndex = 8;
+            descripcionLabel.TabIndex = 6;
             descripcionLabel.Text = "Descripción:";
             // 
             // observacionLabel
@@ -124,7 +127,7 @@
             observacionLabel.Location = new System.Drawing.Point(218, 271);
             observacionLabel.Name = "observacionLabel";
             observacionLabel.Size = new System.Drawing.Size(108, 20);
-            observacionLabel.TabIndex = 10;
+            observacionLabel.TabIndex = 8;
             observacionLabel.Text = "Observaciones:";
             // 
             // capaDatosDataSet
@@ -198,7 +201,7 @@
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.bindingNavigatorEditItem,
-            this._1_bien_usoBindingNavigatorSaveItem,
+            this.BindingNavigatorSaveItem,
             this.bindingNavigatorCancel,
             this.bindingNavigatorSearchItem});
             this._1_bien_usoBindingNavigator.Location = new System.Drawing.Point(0, 0);
@@ -287,6 +290,7 @@
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(30, 30);
             this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // bindingNavigatorDeleteItem
             // 
@@ -296,6 +300,7 @@
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(30, 30);
             this.bindingNavigatorDeleteItem.Text = "Eliminar";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorEditItem
             // 
@@ -305,16 +310,17 @@
             this.bindingNavigatorEditItem.Name = "bindingNavigatorEditItem";
             this.bindingNavigatorEditItem.Size = new System.Drawing.Size(30, 30);
             this.bindingNavigatorEditItem.Text = "Editar";
+            this.bindingNavigatorEditItem.Click += new System.EventHandler(this.bindingNavigatorEditItem_Click);
             // 
-            // _1_bien_usoBindingNavigatorSaveItem
+            // BindingNavigatorSaveItem
             // 
-            this._1_bien_usoBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this._1_bien_usoBindingNavigatorSaveItem.Enabled = false;
-            this._1_bien_usoBindingNavigatorSaveItem.Image = global::CapaUsuario.Properties.Resources.save3;
-            this._1_bien_usoBindingNavigatorSaveItem.Name = "_1_bien_usoBindingNavigatorSaveItem";
-            this._1_bien_usoBindingNavigatorSaveItem.Size = new System.Drawing.Size(30, 30);
-            this._1_bien_usoBindingNavigatorSaveItem.Text = "Guardar datos";
-            this._1_bien_usoBindingNavigatorSaveItem.Click += new System.EventHandler(this._1_bien_usoBindingNavigatorSaveItem_Click);
+            this.BindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.BindingNavigatorSaveItem.Enabled = false;
+            this.BindingNavigatorSaveItem.Image = global::CapaUsuario.Properties.Resources.save3;
+            this.BindingNavigatorSaveItem.Name = "BindingNavigatorSaveItem";
+            this.BindingNavigatorSaveItem.Size = new System.Drawing.Size(30, 30);
+            this.BindingNavigatorSaveItem.Text = "Guardar datos";
+            this.BindingNavigatorSaveItem.Click += new System.EventHandler(this._1_bien_usoBindingNavigatorSaveItem_Click);
             // 
             // bindingNavigatorCancel
             // 
@@ -325,6 +331,7 @@
             this.bindingNavigatorCancel.Name = "bindingNavigatorCancel";
             this.bindingNavigatorCancel.Size = new System.Drawing.Size(30, 30);
             this.bindingNavigatorCancel.Text = "Cancelar operación";
+            this.bindingNavigatorCancel.Click += new System.EventHandler(this.bindingNavigatorCancel_Click);
             // 
             // bindingNavigatorSearchItem
             // 
@@ -334,6 +341,7 @@
             this.bindingNavigatorSearchItem.Name = "bindingNavigatorSearchItem";
             this.bindingNavigatorSearchItem.Size = new System.Drawing.Size(30, 30);
             this.bindingNavigatorSearchItem.Text = "Buscar..";
+            this.bindingNavigatorSearchItem.Click += new System.EventHandler(this.bindingNavigatorSearchItem_Click);
             // 
             // _1_bien_usoDataGridView
             // 
@@ -357,7 +365,7 @@
             this._1_bien_usoDataGridView.ReadOnly = true;
             this._1_bien_usoDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this._1_bien_usoDataGridView.Size = new System.Drawing.Size(1169, 345);
-            this._1_bien_usoDataGridView.TabIndex = 1;
+            this._1_bien_usoDataGridView.TabIndex = 10;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -402,52 +410,57 @@
             this.cod_pro_busoTextBox.Name = "cod_pro_busoTextBox";
             this.cod_pro_busoTextBox.ReadOnly = true;
             this.cod_pro_busoTextBox.Size = new System.Drawing.Size(121, 27);
-            this.cod_pro_busoTextBox.TabIndex = 3;
+            this.cod_pro_busoTextBox.TabIndex = 1;
             // 
-            // nombreTextBox
+            // NombreTextBox
             // 
-            this.nombreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this._1_bien_usoBindingSource, "nombre", true));
-            this.nombreTextBox.Font = new System.Drawing.Font("Segoe UI Semilight", 11F);
-            this.nombreTextBox.Location = new System.Drawing.Point(337, 115);
-            this.nombreTextBox.MaxLength = 50;
-            this.nombreTextBox.Name = "nombreTextBox";
-            this.nombreTextBox.ReadOnly = true;
-            this.nombreTextBox.Size = new System.Drawing.Size(283, 27);
-            this.nombreTextBox.TabIndex = 5;
+            this.NombreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this._1_bien_usoBindingSource, "nombre", true));
+            this.NombreTextBox.Font = new System.Drawing.Font("Segoe UI Semilight", 11F);
+            this.NombreTextBox.Location = new System.Drawing.Point(337, 115);
+            this.NombreTextBox.MaxLength = 50;
+            this.NombreTextBox.Name = "NombreTextBox";
+            this.NombreTextBox.ReadOnly = true;
+            this.NombreTextBox.Size = new System.Drawing.Size(283, 27);
+            this.NombreTextBox.TabIndex = 3;
             // 
-            // stockTextBox
+            // StockTextBox
             // 
-            this.stockTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this._1_bien_usoBindingSource, "stock", true));
-            this.stockTextBox.Font = new System.Drawing.Font("Segoe UI Semilight", 11F);
-            this.stockTextBox.Location = new System.Drawing.Point(337, 165);
-            this.stockTextBox.MaxLength = 4;
-            this.stockTextBox.Name = "stockTextBox";
-            this.stockTextBox.ReadOnly = true;
-            this.stockTextBox.Size = new System.Drawing.Size(121, 27);
-            this.stockTextBox.TabIndex = 7;
+            this.StockTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this._1_bien_usoBindingSource, "stock", true));
+            this.StockTextBox.Font = new System.Drawing.Font("Segoe UI Semilight", 11F);
+            this.StockTextBox.Location = new System.Drawing.Point(337, 165);
+            this.StockTextBox.MaxLength = 4;
+            this.StockTextBox.Name = "StockTextBox";
+            this.StockTextBox.ReadOnly = true;
+            this.StockTextBox.Size = new System.Drawing.Size(121, 27);
+            this.StockTextBox.TabIndex = 5;
             // 
-            // descripcionTextBox
+            // DescripcionTextBox
             // 
-            this.descripcionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this._1_bien_usoBindingSource, "descripcion", true));
-            this.descripcionTextBox.Font = new System.Drawing.Font("Segoe UI Semilight", 11F);
-            this.descripcionTextBox.Location = new System.Drawing.Point(337, 215);
-            this.descripcionTextBox.MaxLength = 50;
-            this.descripcionTextBox.Name = "descripcionTextBox";
-            this.descripcionTextBox.ReadOnly = true;
-            this.descripcionTextBox.Size = new System.Drawing.Size(283, 27);
-            this.descripcionTextBox.TabIndex = 9;
+            this.DescripcionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this._1_bien_usoBindingSource, "descripcion", true));
+            this.DescripcionTextBox.Font = new System.Drawing.Font("Segoe UI Semilight", 11F);
+            this.DescripcionTextBox.Location = new System.Drawing.Point(337, 215);
+            this.DescripcionTextBox.MaxLength = 50;
+            this.DescripcionTextBox.Name = "DescripcionTextBox";
+            this.DescripcionTextBox.ReadOnly = true;
+            this.DescripcionTextBox.Size = new System.Drawing.Size(283, 27);
+            this.DescripcionTextBox.TabIndex = 7;
             // 
-            // observacionTextBox
+            // ObservacionTextBox
             // 
-            this.observacionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this._1_bien_usoBindingSource, "observacion", true));
-            this.observacionTextBox.Font = new System.Drawing.Font("Segoe UI Semilight", 11F);
-            this.observacionTextBox.Location = new System.Drawing.Point(337, 265);
-            this.observacionTextBox.MaxLength = 200;
-            this.observacionTextBox.Multiline = true;
-            this.observacionTextBox.Name = "observacionTextBox";
-            this.observacionTextBox.ReadOnly = true;
-            this.observacionTextBox.Size = new System.Drawing.Size(546, 93);
-            this.observacionTextBox.TabIndex = 11;
+            this.ObservacionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this._1_bien_usoBindingSource, "observacion", true));
+            this.ObservacionTextBox.Font = new System.Drawing.Font("Segoe UI Semilight", 11F);
+            this.ObservacionTextBox.Location = new System.Drawing.Point(337, 265);
+            this.ObservacionTextBox.MaxLength = 200;
+            this.ObservacionTextBox.Multiline = true;
+            this.ObservacionTextBox.Name = "ObservacionTextBox";
+            this.ObservacionTextBox.ReadOnly = true;
+            this.ObservacionTextBox.Size = new System.Drawing.Size(546, 93);
+            this.ObservacionTextBox.TabIndex = 9;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
             // 
             // FrmBienUso
             // 
@@ -456,13 +469,13 @@
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1197, 749);
             this.Controls.Add(observacionLabel);
-            this.Controls.Add(this.observacionTextBox);
+            this.Controls.Add(this.ObservacionTextBox);
             this.Controls.Add(descripcionLabel);
-            this.Controls.Add(this.descripcionTextBox);
+            this.Controls.Add(this.DescripcionTextBox);
             this.Controls.Add(stockLabel);
-            this.Controls.Add(this.stockTextBox);
+            this.Controls.Add(this.StockTextBox);
             this.Controls.Add(nombreLabel);
-            this.Controls.Add(this.nombreTextBox);
+            this.Controls.Add(this.NombreTextBox);
             this.Controls.Add(cod_pro_busoLabel);
             this.Controls.Add(this.cod_pro_busoTextBox);
             this.Controls.Add(this._1_bien_usoDataGridView);
@@ -480,6 +493,7 @@
             this._1_bien_usoBindingNavigator.ResumeLayout(false);
             this._1_bien_usoBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this._1_bien_usoDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -503,7 +517,7 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton _1_bien_usoBindingNavigatorSaveItem;
+        private System.Windows.Forms.ToolStripButton BindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView _1_bien_usoDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -511,12 +525,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.TextBox cod_pro_busoTextBox;
-        private System.Windows.Forms.TextBox nombreTextBox;
-        private System.Windows.Forms.TextBox stockTextBox;
-        private System.Windows.Forms.TextBox descripcionTextBox;
-        private System.Windows.Forms.TextBox observacionTextBox;
+        private System.Windows.Forms.TextBox NombreTextBox;
+        private System.Windows.Forms.TextBox StockTextBox;
+        private System.Windows.Forms.TextBox DescripcionTextBox;
+        private System.Windows.Forms.TextBox ObservacionTextBox;
         private System.Windows.Forms.ToolStripButton bindingNavigatorEditItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorCancel;
         private System.Windows.Forms.ToolStripButton bindingNavigatorSearchItem;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

@@ -26,8 +26,8 @@ namespace CapaUsuario
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
 
             materialSkinManager.ColorScheme = new ColorScheme(
-            Primary.DeepPurple500, Primary.DeepPurple400,
-            Primary.Green500, Accent.Green100,
+            Primary.Blue700, Primary.Blue500,
+            Primary.Blue700, Accent.Pink400,
             TextShade.WHITE);
 
             Opacity = 0;      //first the opacity is 0

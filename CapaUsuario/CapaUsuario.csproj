@@ -78,16 +78,28 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CapaDatosDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Compras\FrmBienUso.cs">
+    <Compile Include="Compras\Bienes_de_uso\FrmBienUso.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Compras\FrmBienUso.Designer.cs">
+    <Compile Include="Compras\Bienes_de_uso\FrmBienUso.Designer.cs">
       <DependentUpon>FrmBienUso.cs</DependentUpon>
     </Compile>
-    <Compile Include="Compras\FrmStock.cs">
+    <Compile Include="Compras\Bienes_de_uso\FrmBusquedaBienUso.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Compras\FrmStock.Designer.cs">
+    <Compile Include="Compras\Bienes_de_uso\FrmBusquedaBienUso.Designer.cs">
+      <DependentUpon>FrmBusquedaBienUso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\Stock\FrmBusquedaStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\Stock\FrmBusquedaStock.Designer.cs">
+      <DependentUpon>FrmBusquedaStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\Stock\FrmStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\Stock\FrmStock.Designer.cs">
       <DependentUpon>FrmStock.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmLogin.cs">
@@ -110,10 +122,16 @@
     <Compile Include="sfgndfghd.Designer.cs">
       <DependentUpon>sfgndfghd.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Compras\FrmBienUso.resx">
+    <EmbeddedResource Include="Compras\Bienes_de_uso\FrmBienUso.resx">
       <DependentUpon>FrmBienUso.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Compras\FrmStock.resx">
+    <EmbeddedResource Include="Compras\Bienes_de_uso\FrmBusquedaBienUso.resx">
+      <DependentUpon>FrmBusquedaBienUso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compras\Stock\FrmBusquedaStock.resx">
+      <DependentUpon>FrmBusquedaStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compras\Stock\FrmStock.resx">
       <DependentUpon>FrmStock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
@@ -210,6 +228,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="iconfinder_Money-Graph_379341.ico" />
+    <None Include="Resources\aceptar.png" />
     <None Include="Resources\save3.png" />
     <None Include="Resources\save.png" />
     <None Include="Resources\save2.png" />
