@@ -31,10 +31,10 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label cod_pro_stockLabel;
             System.Windows.Forms.Label nombreLabel;
-            System.Windows.Forms.Label stk_optLabel;
-            System.Windows.Forms.Label stk_criLabel;
             System.Windows.Forms.Label cod_catLabel;
             System.Windows.Forms.Label stk_actLabel;
+            System.Windows.Forms.Label stk_optLabel;
+            System.Windows.Forms.Label stk_criLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmStock));
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -57,6 +57,8 @@
             this.codcatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.stk_criNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.stk_optNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.CancelarMarcaMedida = new MaterialSkin.Controls.MaterialRaisedButton();
             this.label4 = new System.Windows.Forms.Label();
@@ -67,8 +69,6 @@
             this.medidaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.AgregarMarcaMedidaButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.stk_actTextBox = new System.Windows.Forms.TextBox();
-            this.StockCriticoTextBox = new System.Windows.Forms.TextBox();
-            this.StockOptimoTextBox = new System.Windows.Forms.TextBox();
             this.NombreTextBox = new System.Windows.Forms.TextBox();
             this.cod_pro_stockTextBox = new System.Windows.Forms.TextBox();
             this.CategoriaComboBox = new System.Windows.Forms.ComboBox();
@@ -97,10 +97,10 @@
             this.tableAdapterManager1 = new CapaUsuario.CapaUsuarioDataSetTableAdapters.TableAdapterManager();
             cod_pro_stockLabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
-            stk_optLabel = new System.Windows.Forms.Label();
-            stk_criLabel = new System.Windows.Forms.Label();
             cod_catLabel = new System.Windows.Forms.Label();
             stk_actLabel = new System.Windows.Forms.Label();
+            stk_optLabel = new System.Windows.Forms.Label();
+            stk_criLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -112,6 +112,8 @@
             ((System.ComponentModel.ISupportInitialize)(this._1_stockDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stk_criNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stk_optNumericUpDown)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.medidaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._1_stockBindingNavigator)).BeginInit();
@@ -137,24 +139,6 @@
             nombreLabel.TabIndex = 2;
             nombreLabel.Text = "Nombre:";
             // 
-            // stk_optLabel
-            // 
-            stk_optLabel.AutoSize = true;
-            stk_optLabel.Location = new System.Drawing.Point(128, 228);
-            stk_optLabel.Name = "stk_optLabel";
-            stk_optLabel.Size = new System.Drawing.Size(100, 20);
-            stk_optLabel.TabIndex = 10;
-            stk_optLabel.Text = "Stock óptimo:";
-            // 
-            // stk_criLabel
-            // 
-            stk_criLabel.AutoSize = true;
-            stk_criLabel.Location = new System.Drawing.Point(137, 298);
-            stk_criLabel.Name = "stk_criLabel";
-            stk_criLabel.Size = new System.Drawing.Size(91, 20);
-            stk_criLabel.TabIndex = 12;
-            stk_criLabel.Text = "Stock crítico:";
-            // 
             // cod_catLabel
             // 
             cod_catLabel.AutoSize = true;
@@ -172,6 +156,24 @@
             stk_actLabel.Size = new System.Drawing.Size(91, 20);
             stk_actLabel.TabIndex = 16;
             stk_actLabel.Text = "Stock actual:";
+            // 
+            // stk_optLabel
+            // 
+            stk_optLabel.AutoSize = true;
+            stk_optLabel.Location = new System.Drawing.Point(128, 228);
+            stk_optLabel.Name = "stk_optLabel";
+            stk_optLabel.Size = new System.Drawing.Size(100, 20);
+            stk_optLabel.TabIndex = 20;
+            stk_optLabel.Text = "Stock óptimo:";
+            // 
+            // stk_criLabel
+            // 
+            stk_criLabel.AutoSize = true;
+            stk_criLabel.Location = new System.Drawing.Point(137, 295);
+            stk_criLabel.Name = "stk_criLabel";
+            stk_criLabel.Size = new System.Drawing.Size(91, 20);
+            stk_criLabel.TabIndex = 21;
+            stk_criLabel.Text = "Stock crítico:";
             // 
             // errorProvider1
             // 
@@ -197,7 +199,7 @@
             this.ActualizarButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ActualizarButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ActualizarButton.Depth = 0;
-            this.ActualizarButton.Location = new System.Drawing.Point(42, 23);
+            this.ActualizarButton.Location = new System.Drawing.Point(39, 37);
             this.ActualizarButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.ActualizarButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.ActualizarButton.Name = "ActualizarButton";
@@ -294,7 +296,7 @@
             this.ActualizarStockButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ActualizarStockButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ActualizarStockButton.Depth = 0;
-            this.ActualizarStockButton.Location = new System.Drawing.Point(36, 25);
+            this.ActualizarStockButton.Location = new System.Drawing.Point(34, 25);
             this.ActualizarStockButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.ActualizarStockButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.ActualizarStockButton.Name = "ActualizarStockButton";
@@ -327,7 +329,7 @@
             this._1_stockDataGridView.Name = "_1_stockDataGridView";
             this._1_stockDataGridView.ReadOnly = true;
             this._1_stockDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._1_stockDataGridView.Size = new System.Drawing.Size(996, 426);
+            this._1_stockDataGridView.Size = new System.Drawing.Size(996, 507);
             this._1_stockDataGridView.TabIndex = 0;
             // 
             // codprostockDataGridViewTextBoxColumn1
@@ -385,17 +387,17 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.White;
+            this.tabPage1.Controls.Add(stk_criLabel);
+            this.tabPage1.Controls.Add(this.stk_criNumericUpDown);
+            this.tabPage1.Controls.Add(stk_optLabel);
+            this.tabPage1.Controls.Add(this.stk_optNumericUpDown);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(stk_actLabel);
             this.tabPage1.Controls.Add(this.stk_actTextBox);
-            this.tabPage1.Controls.Add(this.StockCriticoTextBox);
-            this.tabPage1.Controls.Add(this.StockOptimoTextBox);
             this.tabPage1.Controls.Add(this.NombreTextBox);
             this.tabPage1.Controls.Add(this.cod_pro_stockTextBox);
             this.tabPage1.Controls.Add(cod_catLabel);
             this.tabPage1.Controls.Add(this.CategoriaComboBox);
-            this.tabPage1.Controls.Add(stk_criLabel);
-            this.tabPage1.Controls.Add(stk_optLabel);
             this.tabPage1.Controls.Add(nombreLabel);
             this.tabPage1.Controls.Add(cod_pro_stockLabel);
             this.tabPage1.Controls.Add(this._1_stockBindingNavigator);
@@ -407,6 +409,34 @@
             this.tabPage1.Size = new System.Drawing.Size(1012, 620);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Mantenimiento";
+            // 
+            // stk_criNumericUpDown
+            // 
+            this.stk_criNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.stockBindingSource, "stk_cri", true));
+            this.stk_criNumericUpDown.Enabled = false;
+            this.stk_criNumericUpDown.Location = new System.Drawing.Point(234, 293);
+            this.stk_criNumericUpDown.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.stk_criNumericUpDown.Name = "stk_criNumericUpDown";
+            this.stk_criNumericUpDown.Size = new System.Drawing.Size(120, 27);
+            this.stk_criNumericUpDown.TabIndex = 22;
+            // 
+            // stk_optNumericUpDown
+            // 
+            this.stk_optNumericUpDown.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.stockBindingSource, "stk_opt", true));
+            this.stk_optNumericUpDown.Enabled = false;
+            this.stk_optNumericUpDown.Location = new System.Drawing.Point(234, 226);
+            this.stk_optNumericUpDown.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.stk_optNumericUpDown.Name = "stk_optNumericUpDown";
+            this.stk_optNumericUpDown.Size = new System.Drawing.Size(120, 27);
+            this.stk_optNumericUpDown.TabIndex = 21;
             // 
             // groupBox1
             // 
@@ -519,30 +549,11 @@
             // 
             this.stk_actTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.stockBindingSource, "stk_act", true));
             this.stk_actTextBox.Location = new System.Drawing.Point(590, 225);
+            this.stk_actTextBox.MaxLength = 4;
             this.stk_actTextBox.Name = "stk_actTextBox";
             this.stk_actTextBox.ReadOnly = true;
             this.stk_actTextBox.Size = new System.Drawing.Size(236, 27);
             this.stk_actTextBox.TabIndex = 17;
-            // 
-            // StockCriticoTextBox
-            // 
-            this.StockCriticoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.stockBindingSource, "stk_cri", true));
-            this.StockCriticoTextBox.Location = new System.Drawing.Point(234, 295);
-            this.StockCriticoTextBox.MaxLength = 4;
-            this.StockCriticoTextBox.Name = "StockCriticoTextBox";
-            this.StockCriticoTextBox.ReadOnly = true;
-            this.StockCriticoTextBox.Size = new System.Drawing.Size(202, 27);
-            this.StockCriticoTextBox.TabIndex = 13;
-            // 
-            // StockOptimoTextBox
-            // 
-            this.StockOptimoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.stockBindingSource, "stk_opt", true));
-            this.StockOptimoTextBox.Location = new System.Drawing.Point(234, 225);
-            this.StockOptimoTextBox.MaxLength = 4;
-            this.StockOptimoTextBox.Name = "StockOptimoTextBox";
-            this.StockOptimoTextBox.ReadOnly = true;
-            this.StockOptimoTextBox.Size = new System.Drawing.Size(202, 27);
-            this.StockOptimoTextBox.TabIndex = 11;
             // 
             // NombreTextBox
             // 
@@ -835,6 +846,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stk_criNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stk_optNumericUpDown)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.medidaBindingSource)).EndInit();
@@ -859,8 +872,6 @@
         private System.Windows.Forms.ComboBox MedidaComboBox;
         private MaterialSkin.Controls.MaterialRaisedButton AgregarMarcaMedidaButton;
         private System.Windows.Forms.TextBox stk_actTextBox;
-        private System.Windows.Forms.TextBox StockCriticoTextBox;
-        private System.Windows.Forms.TextBox StockOptimoTextBox;
         private System.Windows.Forms.TextBox NombreTextBox;
         private System.Windows.Forms.TextBox cod_pro_stockTextBox;
         private System.Windows.Forms.ComboBox CategoriaComboBox;
@@ -906,5 +917,7 @@
         private CapaUsuarioDataSetTableAdapters.TableAdapterManager tableAdapterManager1;
         private System.Windows.Forms.DataGridViewComboBoxColumn codprostockDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn codmarDataGridViewTextBoxColumn;
+        private System.Windows.Forms.NumericUpDown stk_criNumericUpDown;
+        private System.Windows.Forms.NumericUpDown stk_optNumericUpDown;
     }
 }

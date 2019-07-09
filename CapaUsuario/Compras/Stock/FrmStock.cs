@@ -29,18 +29,18 @@ namespace CapaUsuario.Compras
         private void FrmStock_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'capaUsuarioDataSet._1_medida' Puede moverla o quitarla según sea necesario.
-            this._1_medidaTableAdapter.Fill(this.capaUsuarioDataSet._1_medida);
+            _1_medidaTableAdapter.Fill(capaUsuarioDataSet._1_medida);
             // TODO: esta línea de código carga datos en la tabla 'capaUsuarioDataSet._1_marca' Puede moverla o quitarla según sea necesario.
-            this._1_marcaTableAdapter.Fill(this.capaUsuarioDataSet._1_marca);
+            _1_marcaTableAdapter.Fill(capaUsuarioDataSet._1_marca);
             // TODO: esta línea de código carga datos en la tabla 'capaUsuarioDataSet._1_stock' Puede moverla o quitarla según sea necesario.
-            this._1_stockTableAdapter.Fill(this.capaUsuarioDataSet._1_stock);
+            _1_stockTableAdapter.Fill(capaUsuarioDataSet._1_stock);
             // TODO: esta línea de código carga datos en la tabla 'capaUsuarioDataSet._1_stock_marca' Puede moverla o quitarla según sea necesario.
-            this._1_stock_marcaTableAdapter.Fill(this.capaUsuarioDataSet._1_stock_marca);
+            _1_stock_marcaTableAdapter.Fill(capaUsuarioDataSet._1_stock_marca);
             // TODO: esta línea de código carga datos en la tabla 'capaUsuarioDataSet._1_categoria' Puede moverla o quitarla según sea necesario.
-            this._1_categoriaTableAdapter.Fill(this.capaUsuarioDataSet._1_categoria);
+            _1_categoriaTableAdapter.Fill(capaUsuarioDataSet._1_categoria);
             
             MarcaComboBox.SelectedIndex = -1;
-
+            FrmStock_SizeChanged(sender, e);
         }
 
 
@@ -57,8 +57,8 @@ namespace CapaUsuario.Compras
         {
 
             NombreTextBox.ReadOnly = false;
-            StockOptimoTextBox.ReadOnly = false;
-            StockCriticoTextBox.ReadOnly = false;
+            stk_optNumericUpDown.Enabled = true;
+            stk_criNumericUpDown.Enabled = true;
 
             MarcaComboBox.SelectedIndex = -1;
 
@@ -88,8 +88,8 @@ namespace CapaUsuario.Compras
         private void DeshabilitarCampos()
         {
             NombreTextBox.ReadOnly = true;
-            StockOptimoTextBox.ReadOnly = true;
-            StockCriticoTextBox.ReadOnly = true;
+            stk_optNumericUpDown.Enabled = false;
+            stk_criNumericUpDown.Enabled = false;
 
             CategoriaComboBox.Enabled = false;
             MarcaComboBox.Enabled = false;
@@ -151,7 +151,7 @@ namespace CapaUsuario.Compras
         private bool ValidarCampos()
         {
             //Nombre
-            if (NombreTextBox.Text == string.Empty)
+            if (NombreTextBox.Text.Trim() == string.Empty)
             {
                 errorProvider1.SetError(NombreTextBox, "Debe ingresar un nombre");
                 NombreTextBox.Focus();
@@ -171,31 +171,12 @@ namespace CapaUsuario.Compras
 
 
             //Stock óptimo
-            if (StockOptimoTextBox.Text == string.Empty)
-            {
-                errorProvider1.SetError(StockOptimoTextBox, "Debe ingresar un stock óptimo");
-                StockOptimoTextBox.Focus();
-                return false;
-            }
-            errorProvider1.Clear();
 
-            if (StockOptimoTextBox.Text != string.Empty)
-            {
-                if (!int.TryParse(StockOptimoTextBox.Text, out int f))
-                {
-                    errorProvider1.SetError(StockOptimoTextBox, "Debe ingresar un valor numérico entero");
-                    StockOptimoTextBox.Focus();
-                    return false;
-                }
-            }
-            errorProvider1.Clear();
-
-
-            int stockOptimo = Convert.ToInt32(StockOptimoTextBox.Text);
+            decimal stockOptimo = stk_optNumericUpDown.Value;
             if (stockOptimo <= 0)
             {
-                errorProvider1.SetError(StockOptimoTextBox, "Debe ingesar un valor mayor a cero (0)");
-                StockOptimoTextBox.Focus();
+                errorProvider1.SetError(stk_optNumericUpDown, "Debe seleccionar un valor mayor a cero (0)");
+                stk_optNumericUpDown.Focus();
                 return false;
             }
             errorProvider1.Clear();
@@ -203,30 +184,11 @@ namespace CapaUsuario.Compras
 
             //Stock crítico
 
-            if (StockCriticoTextBox.Text == string.Empty)
-            {
-                errorProvider1.SetError(StockCriticoTextBox, "Debe ingresar un stock óptimo");
-                StockCriticoTextBox.Focus();
-                return false;
-            }
-            errorProvider1.Clear();
-
-            if (StockCriticoTextBox.Text != string.Empty)
-            {
-                if (!int.TryParse(StockCriticoTextBox.Text, out int f))
-                {
-                    errorProvider1.SetError(StockCriticoTextBox, "Debe ingresar un valor numérico entero");
-                    StockCriticoTextBox.Focus();
-                    return false;
-                }
-            }
-            errorProvider1.Clear();
-
-            int stockCritico = Convert.ToInt32(StockCriticoTextBox.Text);
+            decimal stockCritico = stk_criNumericUpDown.Value;
             if (stockCritico <= 0)
             {
-                errorProvider1.SetError(StockCriticoTextBox, "Debe ingesar un valor mayor a cero (0)");
-                StockCriticoTextBox.Focus();
+                errorProvider1.SetError(stk_criNumericUpDown, "Debe sleccionar un valor mayor a cero (0)");
+                stk_optNumericUpDown.Focus();
                 return false;
             }
             errorProvider1.Clear();
@@ -379,9 +341,7 @@ namespace CapaUsuario.Compras
                MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
 
             if (rta == DialogResult.No) return;
-
-            //despues tengo que agregar la comprobación de que el producto
-            //no tenga referencia en otras tabals (Pedidos de reaporv, ordenes de compra, etc)
+            
 
             //Borramos primero las referencia en stock_marca y stock_medida
             string msg, msg2;

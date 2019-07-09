@@ -49,7 +49,7 @@ namespace CapaUsuario.Compras.Bienes_de_uso
         private bool ValidarCampos()
         {
             //Nombre
-            if (nombreTextBox.Text == string.Empty)
+            if (nombreTextBox.Text.Trim() == string.Empty)
             {
                 errorProvider1.SetError(nombreTextBox, "Debe ingresar un nombre");
                 nombreTextBox.Focus();
@@ -58,7 +58,7 @@ namespace CapaUsuario.Compras.Bienes_de_uso
             errorProvider1.Clear();
 
             //Stock óptimo
-            if (stockTextBox.Text == string.Empty)
+            if (stockTextBox.Text.Trim() == string.Empty)
             {
                 errorProvider1.SetError(stockTextBox, "Debe ingresar un stock óptimo");
                 stockTextBox.Focus();
@@ -66,9 +66,9 @@ namespace CapaUsuario.Compras.Bienes_de_uso
             }
             errorProvider1.Clear();
 
-            if (stockTextBox.Text != string.Empty)
+            if (stockTextBox.Text.Trim() != string.Empty)
             {
-                if (!int.TryParse(stockTextBox.Text, out int f))
+                if (!int.TryParse(stockTextBox.Text.Trim(), out int f))
                 {
                     errorProvider1.SetError(stockTextBox, "Debe ingresar un valor numérico entero");
                     stockTextBox.Focus();
@@ -78,7 +78,7 @@ namespace CapaUsuario.Compras.Bienes_de_uso
             errorProvider1.Clear();
 
 
-            int stock = Convert.ToInt32(stockTextBox.Text);
+            int stock = Convert.ToInt32(stockTextBox.Text.Trim());
             if (stock <= 0)
             {
                 errorProvider1.SetError(stockTextBox, "Debe ingesar un valor mayor a cero (0)");

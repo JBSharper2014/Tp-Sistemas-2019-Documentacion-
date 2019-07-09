@@ -2,6 +2,7 @@
 using CapaDatos;
 using CapaUsuario.Compras;
 using CapaUsuario.Compras.Bienes_de_uso;
+using CapaUsuario.Compras.Proveedores;
 using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
@@ -27,6 +28,7 @@ namespace CapaUsuario
 
         private FrmBienUso bienesDeUso;
         private FrmStock stock;
+        private FrmProveedores proveedores;
 
         public FrmMenuPrincipal()
         {
@@ -111,6 +113,25 @@ namespace CapaUsuario
             else
             {
                 Close();
+            }
+        }
+
+        private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (proveedores == null || proveedores.IsDisposed)
+            {
+                proveedores = new FrmProveedores
+                {
+                    MdiParent = this,
+                    //UsuarioLogueado = usuarioLogueado
+                };
+                proveedores.Show();
+            }
+            else
+            {
+                MessageBox.Show("El formulario ya se encuentra abierto", "Atención",
+                 MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
             }
         }
     }
