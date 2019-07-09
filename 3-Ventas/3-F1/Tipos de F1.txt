@@ -1,0 +1,11 @@
+0-login
+
+
+1- Registro de cliente - (Para la creación pedidos por credito debe haber clientes cargados)
+2- Lista de precio - por cada producto de venta deberá haber un precio
+3-Pedido de Venta - llega un cliente y hace un pedido
+4-Remito por venta - remito
+5-Factura por venta - factura
+6-Devolucion. El cliente hace una devolucion
+7-Nota de crédito. Para guardar créditos que los clientes tengan con la empresa.
+8-Cuentas corrientes clientes - Entidad que sirve para corroborar 

@@ -1,0 +1,4 @@
+Recibos (Esto es lo que emite a partir de las facturas, para recibir algo) (IMplementar enel futuro)
+Confirmación del cobro (Controla y registra los debitos o pagos manuales que llegan a la empresa), usa recibos
+Registracion monetaria (Afectará a las distintas cuentas corrientes)
+

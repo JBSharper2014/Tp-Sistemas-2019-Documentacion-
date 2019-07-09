@@ -1,0 +1,24 @@
+Se creó el diccionario de datos.
+
+Se modificó Base de datos.
+Se modificaron (F1, Modelo de datos) para mantener la coherencia con respecto a los cambios.
+
+Para Modificar en la base de datos:
+
+A-Compras:
+
+1-Eliminar el campo "Codigo de cuenta corriente" de la tabla facturas
+
+2-Eliminar los campos "Codigo de pr", "codigo Sc" en la tabla ordenes de compras.
+
+3-Eliminar el campo "codigo cuenta corriente" de la tabla nota de credito
+
+4- Checkear en la base de datos que todos los campos nullables estén exactamente igual a como lo dice el diccionario de datos
+(Tener en cuenta desde el inicio del diccionario de datos hasta la tabla Nombre: 1_producto_recibido, de ahi en adelante, están todos los cambios documentados.)
+
+5-En la tabla informe de recepcion, el campo estado_pd debe aceptar 100 caracteres y no 50.
+
+B-Pagos:
+
+1-En la tabla orden de pago, los campos aceptada_pago, debitada NO deben aceptar nulos
+

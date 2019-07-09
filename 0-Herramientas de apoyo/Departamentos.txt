@@ -1,0 +1,13 @@
+compras:
+
+Almacenes
+compras
+control de calidad
+recepcion
+Tesoreria
+Administracion
+Ventas
+Creditos
+Expedicion
+Repartidor
+Cobranzas
