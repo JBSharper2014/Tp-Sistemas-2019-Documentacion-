@@ -113,6 +113,16 @@ namespace CapaUsuario.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap compras64 {
+            get {
+                object obj = ResourceManager.GetObject("compras64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cool_save {
             get {
                 object obj = ResourceManager.GetObject("cool_save", resourceCulture);
@@ -186,6 +196,16 @@ namespace CapaUsuario.Properties {
         internal static System.Drawing.Bitmap editWhite32 {
             get {
                 object obj = ResourceManager.GetObject("editWhite32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap exit64 {
+            get {
+                object obj = ResourceManager.GetObject("exit64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -283,6 +303,16 @@ namespace CapaUsuario.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pagos48 {
+            get {
+                object obj = ResourceManager.GetObject("pagos48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pagos64 {
             get {
                 object obj = ResourceManager.GetObject("pagos64", resourceCulture);
@@ -316,6 +346,16 @@ namespace CapaUsuario.Properties {
         internal static System.Drawing.Bitmap product2 {
             get {
                 object obj = ResourceManager.GetObject("product2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap producto64 {
+            get {
+                object obj = ResourceManager.GetObject("producto64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -406,6 +446,16 @@ namespace CapaUsuario.Properties {
         internal static System.Drawing.Bitmap solicitud_compra_100 {
             get {
                 object obj = ResourceManager.GetObject("solicitud_compra_100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ventas64 {
+            get {
+                object obj = ResourceManager.GetObject("ventas64", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

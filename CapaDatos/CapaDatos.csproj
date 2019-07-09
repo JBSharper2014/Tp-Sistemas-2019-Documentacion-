@@ -49,6 +49,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CapaDatosDataSet.cs">
+      <DependentUpon>CapaDatosDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="CapaDatosDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

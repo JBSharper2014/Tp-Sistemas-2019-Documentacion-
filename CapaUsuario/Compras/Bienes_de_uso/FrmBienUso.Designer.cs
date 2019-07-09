@@ -1,4 +1,4 @@
-﻿namespace CapaUsuario.Compras
+﻿namespace CapaUsuario.Compras.Bienes_de_uso
 {
     partial class FrmBienUso
     {
@@ -35,44 +35,44 @@
             System.Windows.Forms.Label descripcionLabel;
             System.Windows.Forms.Label observacionLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmBienUso));
-            this.capaDatosDataSet = new CapaUsuario.CapaDatosDataSet();
+            this.capaUsuarioDataSet = new CapaUsuario.CapaUsuarioDataSet();
             this._1_bien_usoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this._1_bien_usoTableAdapter = new CapaUsuario.CapaDatosDataSetTableAdapters._1_bien_usoTableAdapter();
-            this.tableAdapterManager = new CapaUsuario.CapaDatosDataSetTableAdapters.TableAdapterManager();
+            this._1_bien_usoTableAdapter = new CapaUsuario.CapaUsuarioDataSetTableAdapters._1_bien_usoTableAdapter();
+            this.tableAdapterManager = new CapaUsuario.CapaUsuarioDataSetTableAdapters.TableAdapterManager();
             this._1_bien_usoBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.StockBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this._1_bien_usoDataGridView = new System.Windows.Forms.DataGridView();
             this.bindingNavigatorEditItem = new System.Windows.Forms.ToolStripButton();
-            this.BindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCancel = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSearchItem = new System.Windows.Forms.ToolStripButton();
-            this._1_bien_usoDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cod_pro_busoTextBox = new System.Windows.Forms.TextBox();
-            this.NombreTextBox = new System.Windows.Forms.TextBox();
-            this.StockTextBox = new System.Windows.Forms.TextBox();
-            this.DescripcionTextBox = new System.Windows.Forms.TextBox();
-            this.ObservacionTextBox = new System.Windows.Forms.TextBox();
+            this.nombreTextBox = new System.Windows.Forms.TextBox();
+            this.stockTextBox = new System.Windows.Forms.TextBox();
+            this.descripcionTextBox = new System.Windows.Forms.TextBox();
+            this.observacionTextBox = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             cod_pro_busoLabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
             stockLabel = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
             observacionLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.capaDatosDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.capaUsuarioDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._1_bien_usoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._1_bien_usoBindingNavigator)).BeginInit();
             this._1_bien_usoBindingNavigator.SuspendLayout();
@@ -80,65 +80,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
-            // cod_pro_busoLabel
+            // capaUsuarioDataSet
             // 
-            cod_pro_busoLabel.AutoSize = true;
-            cod_pro_busoLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 11F);
-            cod_pro_busoLabel.Location = new System.Drawing.Point(165, 68);
-            cod_pro_busoLabel.Name = "cod_pro_busoLabel";
-            cod_pro_busoLabel.Size = new System.Drawing.Size(161, 20);
-            cod_pro_busoLabel.TabIndex = 0;
-            cod_pro_busoLabel.Text = "Código de bien de uso:";
-            // 
-            // nombreLabel
-            // 
-            nombreLabel.AutoSize = true;
-            nombreLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 11F);
-            nombreLabel.Location = new System.Drawing.Point(259, 118);
-            nombreLabel.Name = "nombreLabel";
-            nombreLabel.Size = new System.Drawing.Size(67, 20);
-            nombreLabel.TabIndex = 2;
-            nombreLabel.Text = "Nombre:";
-            // 
-            // stockLabel
-            // 
-            stockLabel.AutoSize = true;
-            stockLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 11F);
-            stockLabel.Location = new System.Drawing.Point(277, 168);
-            stockLabel.Name = "stockLabel";
-            stockLabel.Size = new System.Drawing.Size(49, 20);
-            stockLabel.TabIndex = 4;
-            stockLabel.Text = "Stock:";
-            // 
-            // descripcionLabel
-            // 
-            descripcionLabel.AutoSize = true;
-            descripcionLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 11F);
-            descripcionLabel.Location = new System.Drawing.Point(239, 218);
-            descripcionLabel.Name = "descripcionLabel";
-            descripcionLabel.Size = new System.Drawing.Size(87, 20);
-            descripcionLabel.TabIndex = 6;
-            descripcionLabel.Text = "Descripción:";
-            // 
-            // observacionLabel
-            // 
-            observacionLabel.AutoSize = true;
-            observacionLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 11F);
-            observacionLabel.Location = new System.Drawing.Point(218, 271);
-            observacionLabel.Name = "observacionLabel";
-            observacionLabel.Size = new System.Drawing.Size(108, 20);
-            observacionLabel.TabIndex = 8;
-            observacionLabel.Text = "Observaciones:";
-            // 
-            // capaDatosDataSet
-            // 
-            this.capaDatosDataSet.DataSetName = "CapaDatosDataSet";
-            this.capaDatosDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.capaUsuarioDataSet.DataSetName = "CapaUsuarioDataSet";
+            this.capaUsuarioDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // _1_bien_usoBindingSource
             // 
             this._1_bien_usoBindingSource.DataMember = "1_bien_uso";
-            this._1_bien_usoBindingSource.DataSource = this.capaDatosDataSet;
+            this._1_bien_usoBindingSource.DataSource = this.capaUsuarioDataSet;
             // 
             // _1_bien_usoTableAdapter
             // 
@@ -179,7 +129,7 @@
             this.tableAdapterManager._1_usuario_rolTableAdapter = null;
             this.tableAdapterManager._1_usuarioTableAdapter = null;
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.UpdateOrder = CapaUsuario.CapaDatosDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UpdateOrder = CapaUsuario.CapaUsuarioDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // _1_bien_usoBindingNavigator
             // 
@@ -187,7 +137,7 @@
             this._1_bien_usoBindingNavigator.BindingSource = this._1_bien_usoBindingSource;
             this._1_bien_usoBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this._1_bien_usoBindingNavigator.DeleteItem = null;
-            this._1_bien_usoBindingNavigator.ImageScalingSize = new System.Drawing.Size(26, 26);
+            this._1_bien_usoBindingNavigator.ImageScalingSize = new System.Drawing.Size(28, 28);
             this._1_bien_usoBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -201,7 +151,7 @@
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.bindingNavigatorEditItem,
-            this.BindingNavigatorSaveItem,
+            this.StockBindingNavigatorSaveItem,
             this.bindingNavigatorCancel,
             this.bindingNavigatorSearchItem});
             this._1_bien_usoBindingNavigator.Location = new System.Drawing.Point(0, 0);
@@ -211,16 +161,9 @@
             this._1_bien_usoBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this._1_bien_usoBindingNavigator.Name = "_1_bien_usoBindingNavigator";
             this._1_bien_usoBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this._1_bien_usoBindingNavigator.Size = new System.Drawing.Size(1197, 33);
+            this._1_bien_usoBindingNavigator.Size = new System.Drawing.Size(1152, 35);
             this._1_bien_usoBindingNavigator.TabIndex = 0;
             this._1_bien_usoBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 30);
-            this.bindingNavigatorCountItem.Text = "de {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -228,7 +171,7 @@
             this.bindingNavigatorMoveFirstItem.Image = global::CapaUsuario.Properties.Resources.first;
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(30, 30);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(32, 32);
             this.bindingNavigatorMoveFirstItem.Text = "Mover primero";
             // 
             // bindingNavigatorMovePreviousItem
@@ -237,13 +180,13 @@
             this.bindingNavigatorMovePreviousItem.Image = global::CapaUsuario.Properties.Resources.previous1;
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(30, 30);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(32, 32);
             this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 33);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 35);
             // 
             // bindingNavigatorPositionItem
             // 
@@ -254,10 +197,17 @@
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posición actual";
             // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 32);
+            this.bindingNavigatorCountItem.Text = "de {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
+            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 33);
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 35);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -265,7 +215,7 @@
             this.bindingNavigatorMoveNextItem.Image = global::CapaUsuario.Properties.Resources.next;
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(30, 30);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(32, 32);
             this.bindingNavigatorMoveNextItem.Text = "Mover siguiente";
             // 
             // bindingNavigatorMoveLastItem
@@ -274,13 +224,13 @@
             this.bindingNavigatorMoveLastItem.Image = global::CapaUsuario.Properties.Resources.last;
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(30, 30);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(32, 32);
             this.bindingNavigatorMoveLastItem.Text = "Mover último";
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 33);
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 35);
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -288,7 +238,7 @@
             this.bindingNavigatorAddNewItem.Image = global::CapaUsuario.Properties.Resources.Nuevo;
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(30, 30);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(32, 32);
             this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
             this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
@@ -298,50 +248,19 @@
             this.bindingNavigatorDeleteItem.Image = global::CapaUsuario.Properties.Resources.Borrar2;
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(30, 30);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(32, 32);
             this.bindingNavigatorDeleteItem.Text = "Eliminar";
             this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
-            // bindingNavigatorEditItem
+            // StockBindingNavigatorSaveItem
             // 
-            this.bindingNavigatorEditItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorEditItem.Image = global::CapaUsuario.Properties.Resources.editWhite32;
-            this.bindingNavigatorEditItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.bindingNavigatorEditItem.Name = "bindingNavigatorEditItem";
-            this.bindingNavigatorEditItem.Size = new System.Drawing.Size(30, 30);
-            this.bindingNavigatorEditItem.Text = "Editar";
-            this.bindingNavigatorEditItem.Click += new System.EventHandler(this.bindingNavigatorEditItem_Click);
-            // 
-            // BindingNavigatorSaveItem
-            // 
-            this.BindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.BindingNavigatorSaveItem.Enabled = false;
-            this.BindingNavigatorSaveItem.Image = global::CapaUsuario.Properties.Resources.save3;
-            this.BindingNavigatorSaveItem.Name = "BindingNavigatorSaveItem";
-            this.BindingNavigatorSaveItem.Size = new System.Drawing.Size(30, 30);
-            this.BindingNavigatorSaveItem.Text = "Guardar datos";
-            this.BindingNavigatorSaveItem.Click += new System.EventHandler(this._1_bien_usoBindingNavigatorSaveItem_Click);
-            // 
-            // bindingNavigatorCancel
-            // 
-            this.bindingNavigatorCancel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorCancel.Enabled = false;
-            this.bindingNavigatorCancel.Image = global::CapaUsuario.Properties.Resources.cancel2;
-            this.bindingNavigatorCancel.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.bindingNavigatorCancel.Name = "bindingNavigatorCancel";
-            this.bindingNavigatorCancel.Size = new System.Drawing.Size(30, 30);
-            this.bindingNavigatorCancel.Text = "Cancelar operación";
-            this.bindingNavigatorCancel.Click += new System.EventHandler(this.bindingNavigatorCancel_Click);
-            // 
-            // bindingNavigatorSearchItem
-            // 
-            this.bindingNavigatorSearchItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorSearchItem.Image = global::CapaUsuario.Properties.Resources.cool_seach32;
-            this.bindingNavigatorSearchItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.bindingNavigatorSearchItem.Name = "bindingNavigatorSearchItem";
-            this.bindingNavigatorSearchItem.Size = new System.Drawing.Size(30, 30);
-            this.bindingNavigatorSearchItem.Text = "Buscar..";
-            this.bindingNavigatorSearchItem.Click += new System.EventHandler(this.bindingNavigatorSearchItem_Click);
+            this.StockBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.StockBindingNavigatorSaveItem.Enabled = false;
+            this.StockBindingNavigatorSaveItem.Image = global::CapaUsuario.Properties.Resources.save3;
+            this.StockBindingNavigatorSaveItem.Name = "_1_bien_usoBindingNavigatorSaveItem";
+            this.StockBindingNavigatorSaveItem.Size = new System.Drawing.Size(32, 32);
+            this.StockBindingNavigatorSaveItem.Text = "Guardar datos";
+            this.StockBindingNavigatorSaveItem.Click += new System.EventHandler(this._1_bien_usoBindingNavigatorSaveItem_Click);
             // 
             // _1_bien_usoDataGridView
             // 
@@ -359,13 +278,45 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
             this._1_bien_usoDataGridView.DataSource = this._1_bien_usoBindingSource;
-            this._1_bien_usoDataGridView.Location = new System.Drawing.Point(14, 388);
+            this._1_bien_usoDataGridView.Location = new System.Drawing.Point(14, 423);
+            this._1_bien_usoDataGridView.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this._1_bien_usoDataGridView.MultiSelect = false;
             this._1_bien_usoDataGridView.Name = "_1_bien_usoDataGridView";
             this._1_bien_usoDataGridView.ReadOnly = true;
             this._1_bien_usoDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._1_bien_usoDataGridView.Size = new System.Drawing.Size(1169, 345);
-            this._1_bien_usoDataGridView.TabIndex = 10;
+            this._1_bien_usoDataGridView.Size = new System.Drawing.Size(1124, 278);
+            this._1_bien_usoDataGridView.TabIndex = 1;
+            // 
+            // bindingNavigatorEditItem
+            // 
+            this.bindingNavigatorEditItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorEditItem.Image = global::CapaUsuario.Properties.Resources.editWhite32;
+            this.bindingNavigatorEditItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bindingNavigatorEditItem.Name = "bindingNavigatorEditItem";
+            this.bindingNavigatorEditItem.Size = new System.Drawing.Size(32, 32);
+            this.bindingNavigatorEditItem.Text = "Editar";
+            this.bindingNavigatorEditItem.Click += new System.EventHandler(this.bindingNavigatorEditItem_Click);
+            // 
+            // bindingNavigatorCancel
+            // 
+            this.bindingNavigatorCancel.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorCancel.Enabled = false;
+            this.bindingNavigatorCancel.Image = global::CapaUsuario.Properties.Resources.cancel2;
+            this.bindingNavigatorCancel.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bindingNavigatorCancel.Name = "bindingNavigatorCancel";
+            this.bindingNavigatorCancel.Size = new System.Drawing.Size(32, 32);
+            this.bindingNavigatorCancel.Text = "Cancelar operación";
+            this.bindingNavigatorCancel.Click += new System.EventHandler(this.bindingNavigatorCancel_Click);
+            // 
+            // bindingNavigatorSearchItem
+            // 
+            this.bindingNavigatorSearchItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorSearchItem.Image = global::CapaUsuario.Properties.Resources.cool_seach32;
+            this.bindingNavigatorSearchItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.bindingNavigatorSearchItem.Name = "bindingNavigatorSearchItem";
+            this.bindingNavigatorSearchItem.Size = new System.Drawing.Size(32, 32);
+            this.bindingNavigatorSearchItem.Text = "Buscar...";
+            this.bindingNavigatorSearchItem.Click += new System.EventHandler(this.bindingNavigatorSearchItem_Click);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -402,60 +353,106 @@
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
+            // cod_pro_busoLabel
+            // 
+            cod_pro_busoLabel.AutoSize = true;
+            cod_pro_busoLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            cod_pro_busoLabel.Location = new System.Drawing.Point(256, 77);
+            cod_pro_busoLabel.Name = "cod_pro_busoLabel";
+            cod_pro_busoLabel.Size = new System.Drawing.Size(161, 20);
+            cod_pro_busoLabel.TabIndex = 2;
+            cod_pro_busoLabel.Text = "Código de bien de uso:";
+            // 
             // cod_pro_busoTextBox
             // 
             this.cod_pro_busoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this._1_bien_usoBindingSource, "cod_pro_buso", true));
-            this.cod_pro_busoTextBox.Font = new System.Drawing.Font("Segoe UI Semilight", 11F);
-            this.cod_pro_busoTextBox.Location = new System.Drawing.Point(337, 65);
+            this.cod_pro_busoTextBox.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cod_pro_busoTextBox.Location = new System.Drawing.Point(434, 74);
             this.cod_pro_busoTextBox.Name = "cod_pro_busoTextBox";
             this.cod_pro_busoTextBox.ReadOnly = true;
-            this.cod_pro_busoTextBox.Size = new System.Drawing.Size(121, 27);
-            this.cod_pro_busoTextBox.TabIndex = 1;
+            this.cod_pro_busoTextBox.Size = new System.Drawing.Size(268, 27);
+            this.cod_pro_busoTextBox.TabIndex = 3;
             // 
-            // NombreTextBox
+            // nombreLabel
             // 
-            this.NombreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this._1_bien_usoBindingSource, "nombre", true));
-            this.NombreTextBox.Font = new System.Drawing.Font("Segoe UI Semilight", 11F);
-            this.NombreTextBox.Location = new System.Drawing.Point(337, 115);
-            this.NombreTextBox.MaxLength = 50;
-            this.NombreTextBox.Name = "NombreTextBox";
-            this.NombreTextBox.ReadOnly = true;
-            this.NombreTextBox.Size = new System.Drawing.Size(283, 27);
-            this.NombreTextBox.TabIndex = 3;
+            nombreLabel.AutoSize = true;
+            nombreLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            nombreLabel.Location = new System.Drawing.Point(350, 131);
+            nombreLabel.Name = "nombreLabel";
+            nombreLabel.Size = new System.Drawing.Size(67, 20);
+            nombreLabel.TabIndex = 4;
+            nombreLabel.Text = "Nombre:";
             // 
-            // StockTextBox
+            // nombreTextBox
             // 
-            this.StockTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this._1_bien_usoBindingSource, "stock", true));
-            this.StockTextBox.Font = new System.Drawing.Font("Segoe UI Semilight", 11F);
-            this.StockTextBox.Location = new System.Drawing.Point(337, 165);
-            this.StockTextBox.MaxLength = 4;
-            this.StockTextBox.Name = "StockTextBox";
-            this.StockTextBox.ReadOnly = true;
-            this.StockTextBox.Size = new System.Drawing.Size(121, 27);
-            this.StockTextBox.TabIndex = 5;
+            this.nombreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this._1_bien_usoBindingSource, "nombre", true));
+            this.nombreTextBox.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombreTextBox.Location = new System.Drawing.Point(434, 128);
+            this.nombreTextBox.Name = "nombreTextBox";
+            this.nombreTextBox.ReadOnly = true;
+            this.nombreTextBox.Size = new System.Drawing.Size(268, 27);
+            this.nombreTextBox.TabIndex = 5;
             // 
-            // DescripcionTextBox
+            // stockLabel
             // 
-            this.DescripcionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this._1_bien_usoBindingSource, "descripcion", true));
-            this.DescripcionTextBox.Font = new System.Drawing.Font("Segoe UI Semilight", 11F);
-            this.DescripcionTextBox.Location = new System.Drawing.Point(337, 215);
-            this.DescripcionTextBox.MaxLength = 50;
-            this.DescripcionTextBox.Name = "DescripcionTextBox";
-            this.DescripcionTextBox.ReadOnly = true;
-            this.DescripcionTextBox.Size = new System.Drawing.Size(283, 27);
-            this.DescripcionTextBox.TabIndex = 7;
+            stockLabel.AutoSize = true;
+            stockLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            stockLabel.Location = new System.Drawing.Point(368, 185);
+            stockLabel.Name = "stockLabel";
+            stockLabel.Size = new System.Drawing.Size(49, 20);
+            stockLabel.TabIndex = 6;
+            stockLabel.Text = "Stock:";
             // 
-            // ObservacionTextBox
+            // stockTextBox
             // 
-            this.ObservacionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this._1_bien_usoBindingSource, "observacion", true));
-            this.ObservacionTextBox.Font = new System.Drawing.Font("Segoe UI Semilight", 11F);
-            this.ObservacionTextBox.Location = new System.Drawing.Point(337, 265);
-            this.ObservacionTextBox.MaxLength = 200;
-            this.ObservacionTextBox.Multiline = true;
-            this.ObservacionTextBox.Name = "ObservacionTextBox";
-            this.ObservacionTextBox.ReadOnly = true;
-            this.ObservacionTextBox.Size = new System.Drawing.Size(546, 93);
-            this.ObservacionTextBox.TabIndex = 9;
+            this.stockTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this._1_bien_usoBindingSource, "stock", true));
+            this.stockTextBox.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.stockTextBox.Location = new System.Drawing.Point(434, 182);
+            this.stockTextBox.Name = "stockTextBox";
+            this.stockTextBox.ReadOnly = true;
+            this.stockTextBox.Size = new System.Drawing.Size(268, 27);
+            this.stockTextBox.TabIndex = 7;
+            // 
+            // descripcionLabel
+            // 
+            descripcionLabel.AutoSize = true;
+            descripcionLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            descripcionLabel.Location = new System.Drawing.Point(330, 239);
+            descripcionLabel.Name = "descripcionLabel";
+            descripcionLabel.Size = new System.Drawing.Size(87, 20);
+            descripcionLabel.TabIndex = 8;
+            descripcionLabel.Text = "Descripción:";
+            // 
+            // descripcionTextBox
+            // 
+            this.descripcionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this._1_bien_usoBindingSource, "descripcion", true));
+            this.descripcionTextBox.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.descripcionTextBox.Location = new System.Drawing.Point(434, 236);
+            this.descripcionTextBox.Name = "descripcionTextBox";
+            this.descripcionTextBox.ReadOnly = true;
+            this.descripcionTextBox.Size = new System.Drawing.Size(268, 27);
+            this.descripcionTextBox.TabIndex = 9;
+            // 
+            // observacionLabel
+            // 
+            observacionLabel.AutoSize = true;
+            observacionLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            observacionLabel.Location = new System.Drawing.Point(309, 293);
+            observacionLabel.Name = "observacionLabel";
+            observacionLabel.Size = new System.Drawing.Size(108, 20);
+            observacionLabel.TabIndex = 10;
+            observacionLabel.Text = "Observaciones:";
+            // 
+            // observacionTextBox
+            // 
+            this.observacionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this._1_bien_usoBindingSource, "observacion", true));
+            this.observacionTextBox.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.observacionTextBox.Location = new System.Drawing.Point(434, 290);
+            this.observacionTextBox.Multiline = true;
+            this.observacionTextBox.Name = "observacionTextBox";
+            this.observacionTextBox.ReadOnly = true;
+            this.observacionTextBox.Size = new System.Drawing.Size(404, 104);
+            this.observacionTextBox.TabIndex = 11;
             // 
             // errorProvider1
             // 
@@ -466,28 +463,28 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1197, 749);
+            this.ClientSize = new System.Drawing.Size(1152, 741);
             this.Controls.Add(observacionLabel);
-            this.Controls.Add(this.ObservacionTextBox);
+            this.Controls.Add(this.observacionTextBox);
             this.Controls.Add(descripcionLabel);
-            this.Controls.Add(this.DescripcionTextBox);
+            this.Controls.Add(this.descripcionTextBox);
             this.Controls.Add(stockLabel);
-            this.Controls.Add(this.StockTextBox);
+            this.Controls.Add(this.stockTextBox);
             this.Controls.Add(nombreLabel);
-            this.Controls.Add(this.NombreTextBox);
+            this.Controls.Add(this.nombreTextBox);
             this.Controls.Add(cod_pro_busoLabel);
             this.Controls.Add(this.cod_pro_busoTextBox);
             this.Controls.Add(this._1_bien_usoDataGridView);
             this.Controls.Add(this._1_bien_usoBindingNavigator);
-            this.Font = new System.Drawing.Font("Segoe UI Semilight", 10F);
+            this.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FrmBienUso";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bienes de Uso";
             this.Load += new System.EventHandler(this.FrmBienUso_Load);
             this.SizeChanged += new System.EventHandler(this.FrmBienUso_SizeChanged);
-            ((System.ComponentModel.ISupportInitialize)(this.capaDatosDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.capaUsuarioDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._1_bien_usoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._1_bien_usoBindingNavigator)).EndInit();
             this._1_bien_usoBindingNavigator.ResumeLayout(false);
@@ -501,10 +498,10 @@
 
         #endregion
 
-        private CapaDatosDataSet capaDatosDataSet;
+        private CapaUsuarioDataSet capaUsuarioDataSet;
         private System.Windows.Forms.BindingSource _1_bien_usoBindingSource;
-        private CapaDatosDataSetTableAdapters._1_bien_usoTableAdapter _1_bien_usoTableAdapter;
-        private CapaDatosDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private CapaUsuarioDataSetTableAdapters._1_bien_usoTableAdapter _1_bien_usoTableAdapter;
+        private CapaUsuarioDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.BindingNavigator _1_bien_usoBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
@@ -517,21 +514,21 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton BindingNavigatorSaveItem;
+        private System.Windows.Forms.ToolStripButton StockBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView _1_bien_usoDataGridView;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorEditItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorCancel;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorSearchItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.TextBox cod_pro_busoTextBox;
-        private System.Windows.Forms.TextBox NombreTextBox;
-        private System.Windows.Forms.TextBox StockTextBox;
-        private System.Windows.Forms.TextBox DescripcionTextBox;
-        private System.Windows.Forms.TextBox ObservacionTextBox;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorEditItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorCancel;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorSearchItem;
+        private System.Windows.Forms.TextBox nombreTextBox;
+        private System.Windows.Forms.TextBox stockTextBox;
+        private System.Windows.Forms.TextBox descripcionTextBox;
+        private System.Windows.Forms.TextBox observacionTextBox;
         private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

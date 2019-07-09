@@ -90,6 +90,12 @@
     <Compile Include="Compras\Bienes_de_uso\FrmBusquedaBienUso.Designer.cs">
       <DependentUpon>FrmBusquedaBienUso.cs</DependentUpon>
     </Compile>
+    <Compile Include="Compras\Proveedores\FrmProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\Proveedores\FrmProveedores.Designer.cs">
+      <DependentUpon>FrmProveedores.cs</DependentUpon>
+    </Compile>
     <Compile Include="Compras\Stock\FrmBusquedaStock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Compras\Bienes_de_uso\FrmBusquedaBienUso.resx">
       <DependentUpon>FrmBusquedaBienUso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compras\Proveedores\FrmProveedores.resx">
+      <DependentUpon>FrmProveedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Compras\Stock\FrmBusquedaStock.resx">
       <DependentUpon>FrmBusquedaStock.cs</DependentUpon>
@@ -228,6 +237,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="iconfinder_Money-Graph_379341.ico" />
+    <None Include="Resources\pagos48.png" />
+    <None Include="Resources\ventas64.png" />
+    <None Include="Resources\producto64.png" />
+    <None Include="Resources\exit64.png" />
+    <None Include="Resources\compras64.png" />
     <None Include="Resources\aceptar.png" />
     <None Include="Resources\save3.png" />
     <None Include="Resources\save.png" />
@@ -254,5 +268,6 @@
       <Name>CapaDatos</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -59,7 +59,7 @@
             // menuStrip1
             // 
             this.menuStrip1.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(40, 40);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.comprasToolStripMenuItem,
             this.ventasToolStripMenuItem,
@@ -68,7 +68,7 @@
             this.salirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1126, 40);
+            this.menuStrip1.Size = new System.Drawing.Size(1126, 48);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -105,16 +105,16 @@
             this.remitoToolStripMenuItem,
             this.solicitudesDeCompraToolStripMenuItem,
             this.stockToolStripMenuItem});
-            this.comprasToolStripMenuItem.Image = global::CapaUsuario.Properties.Resources.dollar_naranja;
+            this.comprasToolStripMenuItem.Image = global::CapaUsuario.Properties.Resources.compras64;
             this.comprasToolStripMenuItem.Name = "comprasToolStripMenuItem";
-            this.comprasToolStripMenuItem.Size = new System.Drawing.Size(112, 36);
+            this.comprasToolStripMenuItem.Size = new System.Drawing.Size(120, 44);
             this.comprasToolStripMenuItem.Text = "&Compras";
             // 
             // bienesDeUsoToolStripMenuItem
             // 
             this.bienesDeUsoToolStripMenuItem.Image = global::CapaUsuario.Properties.Resources.bienes_de_uso128;
             this.bienesDeUsoToolStripMenuItem.Name = "bienesDeUsoToolStripMenuItem";
-            this.bienesDeUsoToolStripMenuItem.Size = new System.Drawing.Size(304, 38);
+            this.bienesDeUsoToolStripMenuItem.Size = new System.Drawing.Size(312, 46);
             this.bienesDeUsoToolStripMenuItem.Text = "&Bienes de Uso";
             this.bienesDeUsoToolStripMenuItem.Click += new System.EventHandler(this.bienesDeUsoToolStripMenuItem_Click);
             // 
@@ -125,127 +125,127 @@
             this.cotizacionesToolStripMenuItem});
             this.controlDeProveedoresToolStripMenuItem.Image = global::CapaUsuario.Properties.Resources.proveedor_100;
             this.controlDeProveedoresToolStripMenuItem.Name = "controlDeProveedoresToolStripMenuItem";
-            this.controlDeProveedoresToolStripMenuItem.Size = new System.Drawing.Size(304, 38);
+            this.controlDeProveedoresToolStripMenuItem.Size = new System.Drawing.Size(312, 46);
             this.controlDeProveedoresToolStripMenuItem.Text = "&Control de Proveedores";
             // 
             // proveedoresToolStripMenuItem
             // 
             this.proveedoresToolStripMenuItem.Image = global::CapaUsuario.Properties.Resources.proveedores128;
             this.proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
-            this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(176, 38);
+            this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(184, 46);
             this.proveedoresToolStripMenuItem.Text = "&Proveedores";
             // 
             // cotizacionesToolStripMenuItem
             // 
             this.cotizacionesToolStripMenuItem.Image = global::CapaUsuario.Properties.Resources.cotizacion96;
             this.cotizacionesToolStripMenuItem.Name = "cotizacionesToolStripMenuItem";
-            this.cotizacionesToolStripMenuItem.Size = new System.Drawing.Size(176, 38);
+            this.cotizacionesToolStripMenuItem.Size = new System.Drawing.Size(184, 46);
             this.cotizacionesToolStripMenuItem.Text = "&Cotizaciones";
             // 
             // cuentaCorrienteToolStripMenuItem
             // 
             this.cuentaCorrienteToolStripMenuItem.Image = global::CapaUsuario.Properties.Resources.cuenta_corriente64;
             this.cuentaCorrienteToolStripMenuItem.Name = "cuentaCorrienteToolStripMenuItem";
-            this.cuentaCorrienteToolStripMenuItem.Size = new System.Drawing.Size(304, 38);
+            this.cuentaCorrienteToolStripMenuItem.Size = new System.Drawing.Size(312, 46);
             this.cuentaCorrienteToolStripMenuItem.Text = "C&uentas corriente proveedores";
             // 
             // facturaProveedoresToolStripMenuItem
             // 
             this.facturaProveedoresToolStripMenuItem.Image = global::CapaUsuario.Properties.Resources.facturas128;
             this.facturaProveedoresToolStripMenuItem.Name = "facturaProveedoresToolStripMenuItem";
-            this.facturaProveedoresToolStripMenuItem.Size = new System.Drawing.Size(304, 38);
+            this.facturaProveedoresToolStripMenuItem.Size = new System.Drawing.Size(312, 46);
             this.facturaProveedoresToolStripMenuItem.Text = "&Facturas Proveedores";
             // 
             // informeRecepciónToolStripMenuItem
             // 
             this.informeRecepciónToolStripMenuItem.Image = global::CapaUsuario.Properties.Resources.informe_recepcion100;
             this.informeRecepciónToolStripMenuItem.Name = "informeRecepciónToolStripMenuItem";
-            this.informeRecepciónToolStripMenuItem.Size = new System.Drawing.Size(304, 38);
+            this.informeRecepciónToolStripMenuItem.Size = new System.Drawing.Size(312, 46);
             this.informeRecepciónToolStripMenuItem.Text = "&Informes de Recepción";
             // 
             // notaDeCréditoToolStripMenuItem
             // 
             this.notaDeCréditoToolStripMenuItem.Image = global::CapaUsuario.Properties.Resources.nota_credito_80;
             this.notaDeCréditoToolStripMenuItem.Name = "notaDeCréditoToolStripMenuItem";
-            this.notaDeCréditoToolStripMenuItem.Size = new System.Drawing.Size(304, 38);
+            this.notaDeCréditoToolStripMenuItem.Size = new System.Drawing.Size(312, 46);
             this.notaDeCréditoToolStripMenuItem.Text = "&Notas de Crédito";
             // 
             // órdenesDeCompraToolStripMenuItem
             // 
             this.órdenesDeCompraToolStripMenuItem.Image = global::CapaUsuario.Properties.Resources.orden_de_compra_100;
             this.órdenesDeCompraToolStripMenuItem.Name = "órdenesDeCompraToolStripMenuItem";
-            this.órdenesDeCompraToolStripMenuItem.Size = new System.Drawing.Size(304, 38);
+            this.órdenesDeCompraToolStripMenuItem.Size = new System.Drawing.Size(312, 46);
             this.órdenesDeCompraToolStripMenuItem.Text = "&Órdenes de Compra";
             // 
             // pedidosDeDevoluciónToolStripMenuItem
             // 
             this.pedidosDeDevoluciónToolStripMenuItem.Image = global::CapaUsuario.Properties.Resources.devoluciones128;
             this.pedidosDeDevoluciónToolStripMenuItem.Name = "pedidosDeDevoluciónToolStripMenuItem";
-            this.pedidosDeDevoluciónToolStripMenuItem.Size = new System.Drawing.Size(304, 38);
+            this.pedidosDeDevoluciónToolStripMenuItem.Size = new System.Drawing.Size(312, 46);
             this.pedidosDeDevoluciónToolStripMenuItem.Text = "&Pedidos de devolución";
             // 
             // pedidosDeReaprovisionamientoToolStripMenuItem
             // 
             this.pedidosDeReaprovisionamientoToolStripMenuItem.Image = global::CapaUsuario.Properties.Resources.pedido_reaprov100;
             this.pedidosDeReaprovisionamientoToolStripMenuItem.Name = "pedidosDeReaprovisionamientoToolStripMenuItem";
-            this.pedidosDeReaprovisionamientoToolStripMenuItem.Size = new System.Drawing.Size(304, 38);
+            this.pedidosDeReaprovisionamientoToolStripMenuItem.Size = new System.Drawing.Size(312, 46);
             this.pedidosDeReaprovisionamientoToolStripMenuItem.Text = "P&edidos de reaprovisionamiento";
             // 
             // registraciónToolStripMenuItem
             // 
             this.registraciónToolStripMenuItem.Image = global::CapaUsuario.Properties.Resources.registracion64;
             this.registraciónToolStripMenuItem.Name = "registraciónToolStripMenuItem";
-            this.registraciónToolStripMenuItem.Size = new System.Drawing.Size(304, 38);
+            this.registraciónToolStripMenuItem.Size = new System.Drawing.Size(312, 46);
             this.registraciónToolStripMenuItem.Text = "&Registración";
             // 
             // remitoToolStripMenuItem
             // 
             this.remitoToolStripMenuItem.Image = global::CapaUsuario.Properties.Resources.remito100;
             this.remitoToolStripMenuItem.Name = "remitoToolStripMenuItem";
-            this.remitoToolStripMenuItem.Size = new System.Drawing.Size(304, 38);
+            this.remitoToolStripMenuItem.Size = new System.Drawing.Size(312, 46);
             this.remitoToolStripMenuItem.Text = "Re&mito";
             // 
             // solicitudesDeCompraToolStripMenuItem
             // 
             this.solicitudesDeCompraToolStripMenuItem.Image = global::CapaUsuario.Properties.Resources.solicitud_compra_100;
             this.solicitudesDeCompraToolStripMenuItem.Name = "solicitudesDeCompraToolStripMenuItem";
-            this.solicitudesDeCompraToolStripMenuItem.Size = new System.Drawing.Size(304, 38);
+            this.solicitudesDeCompraToolStripMenuItem.Size = new System.Drawing.Size(312, 46);
             this.solicitudesDeCompraToolStripMenuItem.Text = "&Solicitudes de Compra";
             // 
             // stockToolStripMenuItem
             // 
-            this.stockToolStripMenuItem.Image = global::CapaUsuario.Properties.Resources.product2;
+            this.stockToolStripMenuItem.Image = global::CapaUsuario.Properties.Resources.producto64;
             this.stockToolStripMenuItem.Name = "stockToolStripMenuItem";
-            this.stockToolStripMenuItem.Size = new System.Drawing.Size(304, 38);
+            this.stockToolStripMenuItem.Size = new System.Drawing.Size(312, 46);
             this.stockToolStripMenuItem.Text = "S&tock";
             this.stockToolStripMenuItem.Click += new System.EventHandler(this.stockToolStripMenuItem_Click);
             // 
             // ventasToolStripMenuItem
             // 
-            this.ventasToolStripMenuItem.Image = global::CapaUsuario.Properties.Resources.if_Money_206469;
+            this.ventasToolStripMenuItem.Image = global::CapaUsuario.Properties.Resources.ventas64;
             this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
-            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(96, 36);
+            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(104, 44);
             this.ventasToolStripMenuItem.Text = "&Ventas";
             // 
             // pagosToolStripMenuItem
             // 
-            this.pagosToolStripMenuItem.Image = global::CapaUsuario.Properties.Resources.pagos64;
+            this.pagosToolStripMenuItem.Image = global::CapaUsuario.Properties.Resources.pagos48;
             this.pagosToolStripMenuItem.Name = "pagosToolStripMenuItem";
-            this.pagosToolStripMenuItem.Size = new System.Drawing.Size(93, 36);
+            this.pagosToolStripMenuItem.Size = new System.Drawing.Size(101, 44);
             this.pagosToolStripMenuItem.Text = "&Pagos";
             // 
             // cobrosToolStripMenuItem
             // 
             this.cobrosToolStripMenuItem.Image = global::CapaUsuario.Properties.Resources.cobros64;
             this.cobrosToolStripMenuItem.Name = "cobrosToolStripMenuItem";
-            this.cobrosToolStripMenuItem.Size = new System.Drawing.Size(100, 36);
+            this.cobrosToolStripMenuItem.Size = new System.Drawing.Size(108, 44);
             this.cobrosToolStripMenuItem.Text = "C&obros";
             // 
             // salirToolStripMenuItem
             // 
-            this.salirToolStripMenuItem.Image = global::CapaUsuario.Properties.Resources.smoothexit;
+            this.salirToolStripMenuItem.Image = global::CapaUsuario.Properties.Resources.exit64;
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(80, 36);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(88, 44);
             this.salirToolStripMenuItem.Text = "&Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 

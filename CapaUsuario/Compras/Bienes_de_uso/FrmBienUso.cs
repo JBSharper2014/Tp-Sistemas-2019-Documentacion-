@@ -1,4 +1,4 @@
-﻿using CapaUsuario.Compras.Bienes_de_uso;
+﻿using CapaDatos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,23 +9,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace CapaUsuario.Compras
+namespace CapaUsuario.Compras.Bienes_de_uso
 {
     public partial class FrmBienUso : Form
     {
+        private DUsuario usuarioLogueado;
+        public DUsuario UsuarioLogueado { get => usuarioLogueado; set => usuarioLogueado = value; }
+
         private bool nuevo;
 
         public FrmBienUso()
         {
             InitializeComponent();
         }
+
         private void _1_bien_usoBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             if (!ValidarCampos()) return;
 
             Validate();
             _1_bien_usoBindingSource.EndEdit();
-            tableAdapterManager.UpdateAll(capaDatosDataSet);
+            tableAdapterManager.UpdateAll(capaUsuarioDataSet);
 
             if (nuevo)
             {
@@ -45,41 +49,40 @@ namespace CapaUsuario.Compras
         private bool ValidarCampos()
         {
             //Nombre
-            if (NombreTextBox.Text == string.Empty)
+            if (nombreTextBox.Text == string.Empty)
             {
-                errorProvider1.SetError(NombreTextBox, "Debe ingresar un nombre");
-                NombreTextBox.Focus();
+                errorProvider1.SetError(nombreTextBox, "Debe ingresar un nombre");
+                nombreTextBox.Focus();
                 return false;
             }
             errorProvider1.Clear();
 
             //Stock óptimo
-            if (StockTextBox.Text == string.Empty)
+            if (stockTextBox.Text == string.Empty)
             {
-                errorProvider1.SetError(StockTextBox, "Debe ingresar un stock");
-                StockTextBox.Focus();
+                errorProvider1.SetError(stockTextBox, "Debe ingresar un stock óptimo");
+                stockTextBox.Focus();
                 return false;
             }
             errorProvider1.Clear();
 
-            if (StockTextBox.Text != string.Empty)
+            if (stockTextBox.Text != string.Empty)
             {
-                int f;
-                if (!int.TryParse(StockTextBox.Text, out f))
+                if (!int.TryParse(stockTextBox.Text, out int f))
                 {
-                    errorProvider1.SetError(StockTextBox, "Debe ingresar un valor numérico entero");
-                    StockTextBox.Focus();
+                    errorProvider1.SetError(stockTextBox, "Debe ingresar un valor numérico entero");
+                    stockTextBox.Focus();
                     return false;
                 }
             }
             errorProvider1.Clear();
 
 
-            int stock = Convert.ToInt32(StockTextBox.Text);
+            int stock = Convert.ToInt32(stockTextBox.Text);
             if (stock <= 0)
             {
-                errorProvider1.SetError(StockTextBox, "Debe ingesar un valor mayor a cero (0)");
-                StockTextBox.Focus();
+                errorProvider1.SetError(stockTextBox, "Debe ingesar un valor mayor a cero (0)");
+                stockTextBox.Focus();
                 return false;
             }
             errorProvider1.Clear();
@@ -89,8 +92,8 @@ namespace CapaUsuario.Compras
 
         private void FrmBienUso_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'capaDatosDataSet._1_bien_uso' Puede moverla o quitarla según sea necesario.
-            _1_bien_usoTableAdapter.Fill(capaDatosDataSet._1_bien_uso);
+            // TODO: esta línea de código carga datos en la tabla 'capaUsuarioDataSet._1_bien_uso' Puede moverla o quitarla según sea necesario.
+            _1_bien_usoTableAdapter.Fill(capaUsuarioDataSet._1_bien_uso);
             FrmBienUso_SizeChanged(sender, e);
         }
 
@@ -102,14 +105,13 @@ namespace CapaUsuario.Compras
         private void HabilitarCampos()
         {
 
-            NombreTextBox.ReadOnly = false;
-            StockTextBox.ReadOnly = false;
-            DescripcionTextBox.ReadOnly = false;
-            ObservacionTextBox.ReadOnly = false;
-
+            nombreTextBox.ReadOnly = false;
+            stockTextBox.ReadOnly = false;
+            descripcionTextBox.ReadOnly = false;
+            observacionTextBox.ReadOnly = false;
 
             bindingNavigatorCancel.Enabled = true;
-            BindingNavigatorSaveItem.Enabled = true;
+            StockBindingNavigatorSaveItem.Enabled = true;
 
             bindingNavigatorAddNewItem.Enabled = false;
             bindingNavigatorDeleteItem.Enabled = false;
@@ -122,19 +124,19 @@ namespace CapaUsuario.Compras
             bindingNavigatorSearchItem.Enabled = false;
             bindingNavigatorCountItem.Enabled = false;
 
-            NombreTextBox.Focus();
+            nombreTextBox.Focus();
         }
 
         private void DeshabilitarCampos()
         {
-            NombreTextBox.ReadOnly = true;
-            StockTextBox.ReadOnly = true;
-            DescripcionTextBox.ReadOnly = true;
-            ObservacionTextBox.ReadOnly = true;
+
+            nombreTextBox.ReadOnly = true;
+            stockTextBox.ReadOnly = true;
+            descripcionTextBox.ReadOnly = true;
+            observacionTextBox.ReadOnly = true;
 
             bindingNavigatorCancel.Enabled = false;
-            BindingNavigatorSaveItem.Enabled = false;
-
+            StockBindingNavigatorSaveItem.Enabled = false;
 
             bindingNavigatorAddNewItem.Enabled = true;
             bindingNavigatorDeleteItem.Enabled = true;
@@ -148,32 +150,30 @@ namespace CapaUsuario.Compras
             bindingNavigatorCountItem.Enabled = true;
         }
 
-        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
-        {
-            nuevo = true;
-            HabilitarCampos();
-            _1_bien_usoBindingSource.AddNew();
-            NombreTextBox.Focus();
-        }
-
         private void bindingNavigatorEditItem_Click(object sender, EventArgs e)
         {
             nuevo = false;
             HabilitarCampos();
         }
 
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+            nuevo = true;
+            HabilitarCampos();
+            _1_bien_usoBindingSource.AddNew();
+        }
+
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
             DialogResult rta = MessageBox.Show("¿Está seguro de borrar el registro?", "Confirmación",
-               MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+              MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
 
             if (rta == DialogResult.No) return;
-
 
             try
             {
                 _1_bien_usoBindingSource.RemoveAt(_1_bien_usoBindingSource.Position);
-                tableAdapterManager.UpdateAll(capaDatosDataSet);
+                tableAdapterManager.UpdateAll(capaUsuarioDataSet);
                 MessageBox.Show("Registro eliminado con éxito", "Mensaje",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -181,7 +181,7 @@ namespace CapaUsuario.Compras
             {
                 MessageBox.Show("Error al eliminar: " + ex.Message + "\nCierre el formulario para recargar la información", "Mensaje", MessageBoxButtons.OK,
                                    MessageBoxIcon.Exclamation);
-
+                return;
             }
         }
 
@@ -195,13 +195,14 @@ namespace CapaUsuario.Compras
         private void bindingNavigatorSearchItem_Click(object sender, EventArgs e)
         {
             var miBusqueda = new FrmBusquedaBienUso();
+
             miBusqueda.ShowDialog();
 
             //si el usuario cancela la búsqueda, con este if hacemos que el registro mostrado se 
             //quede en el que estaba previo a la búsqueda
             if (miBusqueda.IDBienUso == 0) return;
 
-            //se guarda en la variable position el id proveedor que devuelve la busqueda
+            //se guarda en la variable position el id producto que devuelve la busqueda
             //desde el binding source de proveedores y se lo iguala a la posicion del binding source (el grid)
             int position = _1_bien_usoBindingSource.Find("cod_pro_buso", miBusqueda.IDBienUso);
             _1_bien_usoBindingSource.Position = position;

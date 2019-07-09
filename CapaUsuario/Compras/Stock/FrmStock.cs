@@ -1,5 +1,6 @@
 ﻿using CapaDatos;
 using CapaUsuario.Compras.Stock;
+//using CapaUsuario.Compras.Stock;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,17 +28,17 @@ namespace CapaUsuario.Compras
 
         private void FrmStock_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'capaDatosDataSet._1_medida' Puede moverla o quitarla según sea necesario.
-            this._1_medidaTableAdapter.Fill(this.capaDatosDataSet._1_medida);
-            // TODO: esta línea de código carga datos en la tabla 'capaDatosDataSet._1_marca' Puede moverla o quitarla según sea necesario.
-            this._1_marcaTableAdapter.Fill(this.capaDatosDataSet._1_marca);
-            // TODO: esta línea de código carga datos en la tabla 'capaDatosDataSet._1_stock_marca' Puede moverla o quitarla según sea necesario.
-            this._1_stock_marcaTableAdapter.Fill(this.capaDatosDataSet._1_stock_marca);
-            // TODO: esta línea de código carga datos en la tabla 'capaDatosDataSet._1_categoria' Puede moverla o quitarla según sea necesario.
-            this._1_categoriaTableAdapter.Fill(this.capaDatosDataSet._1_categoria);
-            // TODO: esta línea de código carga datos en la tabla 'capaDatosDataSet._1_stock' Puede moverla o quitarla según sea necesario.
-            this._1_stockTableAdapter.Fill(this.capaDatosDataSet._1_stock);
-            FrmStock_SizeChanged(sender, e);
+            // TODO: esta línea de código carga datos en la tabla 'capaUsuarioDataSet._1_medida' Puede moverla o quitarla según sea necesario.
+            this._1_medidaTableAdapter.Fill(this.capaUsuarioDataSet._1_medida);
+            // TODO: esta línea de código carga datos en la tabla 'capaUsuarioDataSet._1_marca' Puede moverla o quitarla según sea necesario.
+            this._1_marcaTableAdapter.Fill(this.capaUsuarioDataSet._1_marca);
+            // TODO: esta línea de código carga datos en la tabla 'capaUsuarioDataSet._1_stock' Puede moverla o quitarla según sea necesario.
+            this._1_stockTableAdapter.Fill(this.capaUsuarioDataSet._1_stock);
+            // TODO: esta línea de código carga datos en la tabla 'capaUsuarioDataSet._1_stock_marca' Puede moverla o quitarla según sea necesario.
+            this._1_stock_marcaTableAdapter.Fill(this.capaUsuarioDataSet._1_stock_marca);
+            // TODO: esta línea de código carga datos en la tabla 'capaUsuarioDataSet._1_categoria' Puede moverla o quitarla según sea necesario.
+            this._1_categoriaTableAdapter.Fill(this.capaUsuarioDataSet._1_categoria);
+            
             MarcaComboBox.SelectedIndex = -1;
 
         }
@@ -133,7 +134,7 @@ namespace CapaUsuario.Compras
 
         private void bindingNavigatorCancel_Click(object sender, EventArgs e)
         {
-            _1_stockBindingSource.CancelEdit();
+            stockBindingSource.CancelEdit();
             errorProvider1.Dispose();
             DeshabilitarCampos();
         }
@@ -142,7 +143,7 @@ namespace CapaUsuario.Compras
         {
             nuevo = true;
             HabilitarCampos();
-            _1_stockBindingSource.AddNew();
+            stockBindingSource.AddNew();
             stk_actTextBox.Text = "0";
             NombreTextBox.Focus();
         }
@@ -180,8 +181,7 @@ namespace CapaUsuario.Compras
 
             if (StockOptimoTextBox.Text != string.Empty)
             {
-                int f;
-                if (!int.TryParse(StockOptimoTextBox.Text, out f))
+                if (!int.TryParse(StockOptimoTextBox.Text, out int f))
                 {
                     errorProvider1.SetError(StockOptimoTextBox, "Debe ingresar un valor numérico entero");
                     StockOptimoTextBox.Focus();
@@ -213,8 +213,7 @@ namespace CapaUsuario.Compras
 
             if (StockCriticoTextBox.Text != string.Empty)
             {
-                int f;
-                if (!int.TryParse(StockCriticoTextBox.Text, out f))
+                if (!int.TryParse(StockCriticoTextBox.Text, out int f))
                 {
                     errorProvider1.SetError(StockCriticoTextBox, "Debe ingresar un valor numérico entero");
                     StockCriticoTextBox.Focus();
@@ -242,8 +241,8 @@ namespace CapaUsuario.Compras
             if (!ValidarCampos()) return;
 
             Validate();
-            _1_stockBindingSource.EndEdit();
-            tableAdapterManager.UpdateAll(capaDatosDataSet);
+            stockBindingSource.EndEdit();
+            tableAdapterManager1.UpdateAll(capaUsuarioDataSet);
 
             if (nuevo)
             {
@@ -303,7 +302,7 @@ namespace CapaUsuario.Compras
 
             string msg = stockMarca.InsertStockMarca((int)MarcaComboBox.SelectedValue, codProducto);
             string msg2 = stockMedida.InsertStockMedida((int)MedidaComboBox.SelectedValue, codProducto);
-            
+
             MessageBox.Show(msg, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
@@ -339,12 +338,39 @@ namespace CapaUsuario.Compras
 
         private void ActualizarStockButton_Click(object sender, EventArgs e)
         {
-            _1_stockTableAdapter.Fill(capaDatosDataSet._1_stock);
+            try
+            {
+                _1_stockTableAdapter.Fill(capaUsuarioDataSet._1_stock);
+                MessageBox.Show("Lista de productos actualizada", "Mensaje",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo actualizar la lista de productos:" + Environment.NewLine + ex.Message, "Mensaje",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
         }
 
         private void ActualizarButton_Click(object sender, EventArgs e)
         {
-            _1_stock_marcaTableAdapter.Fill(capaDatosDataSet._1_stock_marca);
+
+            try
+            {
+                _1_stock_marcaTableAdapter.Fill(capaUsuarioDataSet._1_stock_marca);
+                MessageBox.Show("Lista de productos por marca actualizada", "Mensaje",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo actualizar la lista de productos por marca:" + Environment.NewLine + ex.Message, 
+                    "Mensaje",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+
         }
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
@@ -374,8 +400,8 @@ namespace CapaUsuario.Compras
 
             try
             {
-                _1_stockBindingSource.RemoveAt(_1_stockBindingSource.Position);
-                tableAdapterManager.UpdateAll(capaDatosDataSet);
+                stockBindingSource.RemoveAt(stockBindingSource.Position);
+                tableAdapterManager1.UpdateAll(capaUsuarioDataSet);
                 MessageBox.Show("Registro eliminado con éxito", "Mensaje",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -392,7 +418,17 @@ namespace CapaUsuario.Compras
         private void bindingNavigatorSearchItem_Click(object sender, EventArgs e)
         {
             var miBusqueda = new FrmBusquedaStock();
+
             miBusqueda.ShowDialog();
+
+            //si el usuario cancela la búsqueda, con este if hacemos que el registro mostrado se 
+            //quede en el que estaba previo a la búsqueda
+            if (miBusqueda.IDProducto == 0) return;
+
+            //se guarda en la variable position el id producto que devuelve la busqueda
+            //desde el binding source de proveedores y se lo iguala a la posicion del binding source (el grid)
+            int position = stockBindingSource.Find("cod_pro_stock", miBusqueda.IDProducto);
+            stockBindingSource.Position = position;
         }
     }
 }

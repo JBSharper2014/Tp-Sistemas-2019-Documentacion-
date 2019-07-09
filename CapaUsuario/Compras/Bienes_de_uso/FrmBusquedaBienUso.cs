@@ -16,7 +16,6 @@ namespace CapaUsuario.Compras.Bienes_de_uso
 
         public int IDBienUso { get => idBienUso; }
 
-
         public FrmBusquedaBienUso()
         {
             InitializeComponent();
@@ -24,15 +23,13 @@ namespace CapaUsuario.Compras.Bienes_de_uso
 
         private void FrmBusquedaBienUso_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla 'capaDatosDataSet._1_bien_uso' Puede moverla o quitarla según sea necesario.
-            _1_bien_usoTableAdapter.Fill(capaDatosDataSet._1_bien_uso);
-
+            // TODO: esta línea de código carga datos en la tabla 'capaUsuarioDataSet._1_bien_uso' Puede moverla o quitarla según sea necesario.
+            _1_bien_usoTableAdapter.Fill(capaUsuarioDataSet._1_bien_uso);
             DgvBusqueda.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        private void fillBy1ToolStripButton_Click(object sender, EventArgs e)
         {
-
             string nombre;
 
 
@@ -58,10 +55,11 @@ namespace CapaUsuario.Compras.Bienes_de_uso
                 nombre = nombreToolStripTextBox.Text;
 
             }
+            
 
             try
             {
-                _1_bien_usoTableAdapter.FillBy(capaDatosDataSet._1_bien_uso, nombre);
+                _1_bien_usoTableAdapter.FillBy1(capaUsuarioDataSet._1_bien_uso, nombre);
             }
             catch (Exception ex)
             {
@@ -74,12 +72,6 @@ namespace CapaUsuario.Compras.Bienes_de_uso
         {
             idBienUso = 0;
             Close();
-        }
-
-        private void quitarFiltrosButton_Click(object sender, EventArgs e)
-        {
-            nombreToolStripTextBox.Text = string.Empty;
-            fillByToolStripButton_Click(sender, e);
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -110,6 +102,11 @@ namespace CapaUsuario.Compras.Bienes_de_uso
 
 
             Close();
+        }
+
+        private void quitarFiltrosButton_Click(object sender, EventArgs e)
+        {
+            fillBy1ToolStripButton_Click(sender, e);
         }
     }
 }

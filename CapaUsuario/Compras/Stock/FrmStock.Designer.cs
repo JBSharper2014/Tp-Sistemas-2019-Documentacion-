@@ -36,7 +36,26 @@
             System.Windows.Forms.Label cod_catLabel;
             System.Windows.Forms.Label stk_actLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmStock));
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.ActualizarButton = new MaterialSkin.Controls.MaterialFlatButton();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.codprostockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.stockBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.capaUsuarioDataSet = new CapaUsuario.CapaUsuarioDataSet();
+            this.codmarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.marcaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.stockmarcaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.ActualizarStockButton = new MaterialSkin.Controls.MaterialFlatButton();
+            this._1_stockDataGridView = new System.Windows.Forms.DataGridView();
+            this.codprostockDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stkactDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stkoptDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stkcriDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codcatDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.CancelarMarcaMedida = new MaterialSkin.Controls.MaterialRaisedButton();
@@ -44,19 +63,15 @@
             this.GuardarMarcaMedidaButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.label5 = new System.Windows.Forms.Label();
             this.MarcaComboBox = new System.Windows.Forms.ComboBox();
-            this.marcaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.capaDatosDataSet = new CapaUsuario.CapaDatosDataSet();
             this.MedidaComboBox = new System.Windows.Forms.ComboBox();
             this.medidaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.AgregarMarcaMedidaButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.stk_actTextBox = new System.Windows.Forms.TextBox();
-            this._1_stockBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.CategoriaComboBox = new System.Windows.Forms.ComboBox();
-            this.categoriaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.StockCriticoTextBox = new System.Windows.Forms.TextBox();
             this.StockOptimoTextBox = new System.Windows.Forms.TextBox();
             this.NombreTextBox = new System.Windows.Forms.TextBox();
             this.cod_pro_stockTextBox = new System.Windows.Forms.TextBox();
+            this.CategoriaComboBox = new System.Windows.Forms.ComboBox();
             this._1_stockBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -73,50 +88,35 @@
             this.StockBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCancel = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSearchItem = new System.Windows.Forms.ToolStripButton();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.ActualizarStockButton = new MaterialSkin.Controls.MaterialFlatButton();
-            this._1_stockDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.ActualizarButton = new MaterialSkin.Controls.MaterialFlatButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.codprostockDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.codmarDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.stockmarcaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this._1_stockTableAdapter = new CapaUsuario.CapaDatosDataSetTableAdapters._1_stockTableAdapter();
-            this.tableAdapterManager = new CapaUsuario.CapaDatosDataSetTableAdapters.TableAdapterManager();
-            this._1_categoriaTableAdapter = new CapaUsuario.CapaDatosDataSetTableAdapters._1_categoriaTableAdapter();
-            this._1_stock_marcaTableAdapter = new CapaUsuario.CapaDatosDataSetTableAdapters._1_stock_marcaTableAdapter();
-            this._1_marcaTableAdapter = new CapaUsuario.CapaDatosDataSetTableAdapters._1_marcaTableAdapter();
-            this._1_medidaTableAdapter = new CapaUsuario.CapaDatosDataSetTableAdapters._1_medidaTableAdapter();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this._1_categoriaTableAdapter = new CapaUsuario.CapaUsuarioDataSetTableAdapters._1_categoriaTableAdapter();
+            this._1_stock_marcaTableAdapter = new CapaUsuario.CapaUsuarioDataSetTableAdapters._1_stock_marcaTableAdapter();
+            this._1_stockTableAdapter = new CapaUsuario.CapaUsuarioDataSetTableAdapters._1_stockTableAdapter();
+            this._1_marcaTableAdapter = new CapaUsuario.CapaUsuarioDataSetTableAdapters._1_marcaTableAdapter();
+            this._1_medidaTableAdapter = new CapaUsuario.CapaUsuarioDataSetTableAdapters._1_medidaTableAdapter();
+            this.tableAdapterManager1 = new CapaUsuario.CapaUsuarioDataSetTableAdapters.TableAdapterManager();
             cod_pro_stockLabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
             stk_optLabel = new System.Windows.Forms.Label();
             stk_criLabel = new System.Windows.Forms.Label();
             cod_catLabel = new System.Windows.Forms.Label();
             stk_actLabel = new System.Windows.Forms.Label();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.marcaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.capaDatosDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.medidaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._1_stockBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._1_stockBindingNavigator)).BeginInit();
-            this._1_stockBindingNavigator.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this._1_stockDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.capaUsuarioDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.marcaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stockmarcaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this._1_stockDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).BeginInit();
+            this.tabPage1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.medidaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._1_stockBindingNavigator)).BeginInit();
+            this._1_stockBindingNavigator.SuspendLayout();
+            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // cod_pro_stockLabel
@@ -173,18 +173,214 @@
             stk_actLabel.TabIndex = 16;
             stk_actLabel.Text = "Stock actual:";
             // 
-            // tabControl1
+            // errorProvider1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1020, 650);
-            this.tabControl1.TabIndex = 0;
+            this.errorProvider1.ContainerControl = this;
+            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabPage3.Controls.Add(this.ActualizarButton);
+            this.tabPage3.Controls.Add(this.dataGridView1);
+            this.tabPage3.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage3.Location = new System.Drawing.Point(4, 26);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1012, 620);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Productos por marca";
+            // 
+            // ActualizarButton
+            // 
+            this.ActualizarButton.AutoSize = true;
+            this.ActualizarButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ActualizarButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ActualizarButton.Depth = 0;
+            this.ActualizarButton.Location = new System.Drawing.Point(42, 23);
+            this.ActualizarButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.ActualizarButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ActualizarButton.Name = "ActualizarButton";
+            this.ActualizarButton.Primary = false;
+            this.ActualizarButton.Size = new System.Drawing.Size(94, 36);
+            this.ActualizarButton.TabIndex = 3;
+            this.ActualizarButton.Text = "Actualizar";
+            this.ActualizarButton.UseVisualStyleBackColor = true;
+            this.ActualizarButton.Click += new System.EventHandler(this.ActualizarButton_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.codprostockDataGridViewTextBoxColumn,
+            this.codmarDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.stockmarcaBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(8, 82);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(495, 416);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // codprostockDataGridViewTextBoxColumn
+            // 
+            this.codprostockDataGridViewTextBoxColumn.DataPropertyName = "cod_pro_stock";
+            this.codprostockDataGridViewTextBoxColumn.DataSource = this.stockBindingSource;
+            this.codprostockDataGridViewTextBoxColumn.DisplayMember = "nombre";
+            this.codprostockDataGridViewTextBoxColumn.HeaderText = "Producto";
+            this.codprostockDataGridViewTextBoxColumn.Name = "codprostockDataGridViewTextBoxColumn";
+            this.codprostockDataGridViewTextBoxColumn.ReadOnly = true;
+            this.codprostockDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.codprostockDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.codprostockDataGridViewTextBoxColumn.ValueMember = "cod_pro_stock";
+            this.codprostockDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // stockBindingSource
+            // 
+            this.stockBindingSource.DataMember = "1_stock";
+            this.stockBindingSource.DataSource = this.capaUsuarioDataSet;
+            // 
+            // capaUsuarioDataSet
+            // 
+            this.capaUsuarioDataSet.DataSetName = "CapaUsuarioDataSet";
+            this.capaUsuarioDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // codmarDataGridViewTextBoxColumn
+            // 
+            this.codmarDataGridViewTextBoxColumn.DataPropertyName = "cod_mar";
+            this.codmarDataGridViewTextBoxColumn.DataSource = this.marcaBindingSource;
+            this.codmarDataGridViewTextBoxColumn.DisplayMember = "nombre";
+            this.codmarDataGridViewTextBoxColumn.HeaderText = "Marca";
+            this.codmarDataGridViewTextBoxColumn.Name = "codmarDataGridViewTextBoxColumn";
+            this.codmarDataGridViewTextBoxColumn.ReadOnly = true;
+            this.codmarDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.codmarDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.codmarDataGridViewTextBoxColumn.ValueMember = "cod_mar";
+            this.codmarDataGridViewTextBoxColumn.Width = 250;
+            // 
+            // marcaBindingSource
+            // 
+            this.marcaBindingSource.DataMember = "1_marca";
+            this.marcaBindingSource.DataSource = this.capaUsuarioDataSet;
+            // 
+            // stockmarcaBindingSource
+            // 
+            this.stockmarcaBindingSource.DataMember = "1_stock_marca";
+            this.stockmarcaBindingSource.DataSource = this.capaUsuarioDataSet;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.AutoScroll = true;
+            this.tabPage2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabPage2.Controls.Add(this.ActualizarStockButton);
+            this.tabPage2.Controls.Add(this._1_stockDataGridView);
+            this.tabPage2.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage2.Location = new System.Drawing.Point(4, 26);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(1012, 620);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Listado";
+            // 
+            // ActualizarStockButton
+            // 
+            this.ActualizarStockButton.AutoSize = true;
+            this.ActualizarStockButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.ActualizarStockButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ActualizarStockButton.Depth = 0;
+            this.ActualizarStockButton.Location = new System.Drawing.Point(36, 25);
+            this.ActualizarStockButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.ActualizarStockButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ActualizarStockButton.Name = "ActualizarStockButton";
+            this.ActualizarStockButton.Primary = false;
+            this.ActualizarStockButton.Size = new System.Drawing.Size(94, 36);
+            this.ActualizarStockButton.TabIndex = 2;
+            this.ActualizarStockButton.Text = "Actualizar";
+            this.ActualizarStockButton.UseVisualStyleBackColor = true;
+            this.ActualizarStockButton.Click += new System.EventHandler(this.ActualizarStockButton_Click);
+            // 
+            // _1_stockDataGridView
+            // 
+            this._1_stockDataGridView.AllowUserToAddRows = false;
+            this._1_stockDataGridView.AllowUserToDeleteRows = false;
+            this._1_stockDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this._1_stockDataGridView.AutoGenerateColumns = false;
+            this._1_stockDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this._1_stockDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.codprostockDataGridViewTextBoxColumn1,
+            this.nombreDataGridViewTextBoxColumn,
+            this.stkactDataGridViewTextBoxColumn,
+            this.stkoptDataGridViewTextBoxColumn,
+            this.stkcriDataGridViewTextBoxColumn,
+            this.codcatDataGridViewTextBoxColumn});
+            this._1_stockDataGridView.DataSource = this.stockBindingSource;
+            this._1_stockDataGridView.Location = new System.Drawing.Point(8, 70);
+            this._1_stockDataGridView.MultiSelect = false;
+            this._1_stockDataGridView.Name = "_1_stockDataGridView";
+            this._1_stockDataGridView.ReadOnly = true;
+            this._1_stockDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this._1_stockDataGridView.Size = new System.Drawing.Size(996, 426);
+            this._1_stockDataGridView.TabIndex = 0;
+            // 
+            // codprostockDataGridViewTextBoxColumn1
+            // 
+            this.codprostockDataGridViewTextBoxColumn1.DataPropertyName = "cod_pro_stock";
+            this.codprostockDataGridViewTextBoxColumn1.HeaderText = "Código de producto";
+            this.codprostockDataGridViewTextBoxColumn1.Name = "codprostockDataGridViewTextBoxColumn1";
+            this.codprostockDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // stkactDataGridViewTextBoxColumn
+            // 
+            this.stkactDataGridViewTextBoxColumn.DataPropertyName = "stk_act";
+            this.stkactDataGridViewTextBoxColumn.HeaderText = "Stock actual";
+            this.stkactDataGridViewTextBoxColumn.Name = "stkactDataGridViewTextBoxColumn";
+            this.stkactDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // stkoptDataGridViewTextBoxColumn
+            // 
+            this.stkoptDataGridViewTextBoxColumn.DataPropertyName = "stk_opt";
+            this.stkoptDataGridViewTextBoxColumn.HeaderText = "Stock óptimo";
+            this.stkoptDataGridViewTextBoxColumn.Name = "stkoptDataGridViewTextBoxColumn";
+            this.stkoptDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // stkcriDataGridViewTextBoxColumn
+            // 
+            this.stkcriDataGridViewTextBoxColumn.DataPropertyName = "stk_cri";
+            this.stkcriDataGridViewTextBoxColumn.HeaderText = "Stock crítico";
+            this.stkcriDataGridViewTextBoxColumn.Name = "stkcriDataGridViewTextBoxColumn";
+            this.stkcriDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // codcatDataGridViewTextBoxColumn
+            // 
+            this.codcatDataGridViewTextBoxColumn.DataPropertyName = "cod_cat";
+            this.codcatDataGridViewTextBoxColumn.DataSource = this.categoriaBindingSource;
+            this.codcatDataGridViewTextBoxColumn.DisplayMember = "nombre";
+            this.codcatDataGridViewTextBoxColumn.HeaderText = "Categoría";
+            this.codcatDataGridViewTextBoxColumn.Name = "codcatDataGridViewTextBoxColumn";
+            this.codcatDataGridViewTextBoxColumn.ReadOnly = true;
+            this.codcatDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.codcatDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.codcatDataGridViewTextBoxColumn.ValueMember = "cod_cat";
+            // 
+            // categoriaBindingSource
+            // 
+            this.categoriaBindingSource.DataMember = "1_categoria";
+            this.categoriaBindingSource.DataSource = this.capaUsuarioDataSet;
             // 
             // tabPage1
             // 
@@ -192,16 +388,16 @@
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(stk_actLabel);
             this.tabPage1.Controls.Add(this.stk_actTextBox);
+            this.tabPage1.Controls.Add(this.StockCriticoTextBox);
+            this.tabPage1.Controls.Add(this.StockOptimoTextBox);
+            this.tabPage1.Controls.Add(this.NombreTextBox);
+            this.tabPage1.Controls.Add(this.cod_pro_stockTextBox);
             this.tabPage1.Controls.Add(cod_catLabel);
             this.tabPage1.Controls.Add(this.CategoriaComboBox);
             this.tabPage1.Controls.Add(stk_criLabel);
-            this.tabPage1.Controls.Add(this.StockCriticoTextBox);
             this.tabPage1.Controls.Add(stk_optLabel);
-            this.tabPage1.Controls.Add(this.StockOptimoTextBox);
             this.tabPage1.Controls.Add(nombreLabel);
-            this.tabPage1.Controls.Add(this.NombreTextBox);
             this.tabPage1.Controls.Add(cod_pro_stockLabel);
-            this.tabPage1.Controls.Add(this.cod_pro_stockTextBox);
             this.tabPage1.Controls.Add(this._1_stockBindingNavigator);
             this.tabPage1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.tabPage1.Font = new System.Drawing.Font("Segoe UI Semilight", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -288,16 +484,6 @@
             this.MarcaComboBox.TabIndex = 7;
             this.MarcaComboBox.ValueMember = "cod_mar";
             // 
-            // marcaBindingSource
-            // 
-            this.marcaBindingSource.DataMember = "1_marca";
-            this.marcaBindingSource.DataSource = this.capaDatosDataSet;
-            // 
-            // capaDatosDataSet
-            // 
-            this.capaDatosDataSet.DataSetName = "CapaDatosDataSet";
-            this.capaDatosDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // MedidaComboBox
             // 
             this.MedidaComboBox.DataSource = this.medidaBindingSource;
@@ -313,7 +499,7 @@
             // medidaBindingSource
             // 
             this.medidaBindingSource.DataMember = "1_medida";
-            this.medidaBindingSource.DataSource = this.capaDatosDataSet;
+            this.medidaBindingSource.DataSource = this.capaUsuarioDataSet;
             // 
             // AgregarMarcaMedidaButton
             // 
@@ -331,21 +517,55 @@
             // 
             // stk_actTextBox
             // 
-            this.stk_actTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this._1_stockBindingSource, "stk_act", true));
+            this.stk_actTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.stockBindingSource, "stk_act", true));
             this.stk_actTextBox.Location = new System.Drawing.Point(590, 225);
             this.stk_actTextBox.Name = "stk_actTextBox";
             this.stk_actTextBox.ReadOnly = true;
             this.stk_actTextBox.Size = new System.Drawing.Size(236, 27);
             this.stk_actTextBox.TabIndex = 17;
             // 
-            // _1_stockBindingSource
+            // StockCriticoTextBox
             // 
-            this._1_stockBindingSource.DataMember = "1_stock";
-            this._1_stockBindingSource.DataSource = this.capaDatosDataSet;
+            this.StockCriticoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.stockBindingSource, "stk_cri", true));
+            this.StockCriticoTextBox.Location = new System.Drawing.Point(234, 295);
+            this.StockCriticoTextBox.MaxLength = 4;
+            this.StockCriticoTextBox.Name = "StockCriticoTextBox";
+            this.StockCriticoTextBox.ReadOnly = true;
+            this.StockCriticoTextBox.Size = new System.Drawing.Size(202, 27);
+            this.StockCriticoTextBox.TabIndex = 13;
+            // 
+            // StockOptimoTextBox
+            // 
+            this.StockOptimoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.stockBindingSource, "stk_opt", true));
+            this.StockOptimoTextBox.Location = new System.Drawing.Point(234, 225);
+            this.StockOptimoTextBox.MaxLength = 4;
+            this.StockOptimoTextBox.Name = "StockOptimoTextBox";
+            this.StockOptimoTextBox.ReadOnly = true;
+            this.StockOptimoTextBox.Size = new System.Drawing.Size(202, 27);
+            this.StockOptimoTextBox.TabIndex = 11;
+            // 
+            // NombreTextBox
+            // 
+            this.NombreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.stockBindingSource, "nombre", true));
+            this.NombreTextBox.Location = new System.Drawing.Point(234, 157);
+            this.NombreTextBox.MaxLength = 50;
+            this.NombreTextBox.Name = "NombreTextBox";
+            this.NombreTextBox.ReadOnly = true;
+            this.NombreTextBox.Size = new System.Drawing.Size(202, 27);
+            this.NombreTextBox.TabIndex = 3;
+            // 
+            // cod_pro_stockTextBox
+            // 
+            this.cod_pro_stockTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.stockBindingSource, "cod_pro_stock", true));
+            this.cod_pro_stockTextBox.Location = new System.Drawing.Point(234, 88);
+            this.cod_pro_stockTextBox.Name = "cod_pro_stockTextBox";
+            this.cod_pro_stockTextBox.ReadOnly = true;
+            this.cod_pro_stockTextBox.Size = new System.Drawing.Size(202, 27);
+            this.cod_pro_stockTextBox.TabIndex = 1;
             // 
             // CategoriaComboBox
             // 
-            this.CategoriaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this._1_stockBindingSource, "cod_cat", true));
+            this.CategoriaComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.stockBindingSource, "cod_cat", true));
             this.CategoriaComboBox.DataSource = this.categoriaBindingSource;
             this.CategoriaComboBox.DisplayMember = "nombre";
             this.CategoriaComboBox.Enabled = false;
@@ -357,54 +577,10 @@
             this.CategoriaComboBox.ValueMember = "cod_cat";
             this.CategoriaComboBox.SelectedValueChanged += new System.EventHandler(this.cod_catComboBox_SelectedValueChanged);
             // 
-            // categoriaBindingSource
-            // 
-            this.categoriaBindingSource.DataMember = "1_categoria";
-            this.categoriaBindingSource.DataSource = this.capaDatosDataSet;
-            // 
-            // StockCriticoTextBox
-            // 
-            this.StockCriticoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this._1_stockBindingSource, "stk_cri", true));
-            this.StockCriticoTextBox.Location = new System.Drawing.Point(234, 295);
-            this.StockCriticoTextBox.MaxLength = 4;
-            this.StockCriticoTextBox.Name = "StockCriticoTextBox";
-            this.StockCriticoTextBox.ReadOnly = true;
-            this.StockCriticoTextBox.Size = new System.Drawing.Size(202, 27);
-            this.StockCriticoTextBox.TabIndex = 13;
-            // 
-            // StockOptimoTextBox
-            // 
-            this.StockOptimoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this._1_stockBindingSource, "stk_opt", true));
-            this.StockOptimoTextBox.Location = new System.Drawing.Point(234, 225);
-            this.StockOptimoTextBox.MaxLength = 4;
-            this.StockOptimoTextBox.Name = "StockOptimoTextBox";
-            this.StockOptimoTextBox.ReadOnly = true;
-            this.StockOptimoTextBox.Size = new System.Drawing.Size(202, 27);
-            this.StockOptimoTextBox.TabIndex = 11;
-            // 
-            // NombreTextBox
-            // 
-            this.NombreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this._1_stockBindingSource, "nombre", true));
-            this.NombreTextBox.Location = new System.Drawing.Point(234, 157);
-            this.NombreTextBox.MaxLength = 50;
-            this.NombreTextBox.Name = "NombreTextBox";
-            this.NombreTextBox.ReadOnly = true;
-            this.NombreTextBox.Size = new System.Drawing.Size(202, 27);
-            this.NombreTextBox.TabIndex = 3;
-            // 
-            // cod_pro_stockTextBox
-            // 
-            this.cod_pro_stockTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this._1_stockBindingSource, "cod_pro_stock", true));
-            this.cod_pro_stockTextBox.Location = new System.Drawing.Point(234, 88);
-            this.cod_pro_stockTextBox.Name = "cod_pro_stockTextBox";
-            this.cod_pro_stockTextBox.ReadOnly = true;
-            this.cod_pro_stockTextBox.Size = new System.Drawing.Size(202, 27);
-            this.cod_pro_stockTextBox.TabIndex = 1;
-            // 
             // _1_stockBindingNavigator
             // 
             this._1_stockBindingNavigator.AddNewItem = null;
-            this._1_stockBindingNavigator.BindingSource = this._1_stockBindingSource;
+            this._1_stockBindingNavigator.BindingSource = this.stockBindingSource;
             this._1_stockBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this._1_stockBindingNavigator.DeleteItem = null;
             this._1_stockBindingNavigator.ImageScalingSize = new System.Drawing.Size(28, 28);
@@ -563,229 +739,18 @@
             this.bindingNavigatorSearchItem.Text = "Buscar...";
             this.bindingNavigatorSearchItem.Click += new System.EventHandler(this.bindingNavigatorSearchItem_Click);
             // 
-            // tabPage2
+            // tabControl1
             // 
-            this.tabPage2.AutoScroll = true;
-            this.tabPage2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tabPage2.Controls.Add(this.ActualizarStockButton);
-            this.tabPage2.Controls.Add(this._1_stockDataGridView);
-            this.tabPage2.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage2.Location = new System.Drawing.Point(4, 26);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1012, 620);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Listado";
-            // 
-            // ActualizarStockButton
-            // 
-            this.ActualizarStockButton.AutoSize = true;
-            this.ActualizarStockButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ActualizarStockButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ActualizarStockButton.Depth = 0;
-            this.ActualizarStockButton.Location = new System.Drawing.Point(36, 25);
-            this.ActualizarStockButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.ActualizarStockButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.ActualizarStockButton.Name = "ActualizarStockButton";
-            this.ActualizarStockButton.Primary = false;
-            this.ActualizarStockButton.Size = new System.Drawing.Size(94, 36);
-            this.ActualizarStockButton.TabIndex = 2;
-            this.ActualizarStockButton.Text = "Actualizar";
-            this.ActualizarStockButton.UseVisualStyleBackColor = true;
-            this.ActualizarStockButton.Click += new System.EventHandler(this.ActualizarStockButton_Click);
-            // 
-            // _1_stockDataGridView
-            // 
-            this._1_stockDataGridView.AllowUserToAddRows = false;
-            this._1_stockDataGridView.AllowUserToDeleteRows = false;
-            this._1_stockDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this._1_stockDataGridView.AutoGenerateColumns = false;
-            this._1_stockDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this._1_stockDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6});
-            this._1_stockDataGridView.DataSource = this._1_stockBindingSource;
-            this._1_stockDataGridView.Location = new System.Drawing.Point(8, 70);
-            this._1_stockDataGridView.MultiSelect = false;
-            this._1_stockDataGridView.Name = "_1_stockDataGridView";
-            this._1_stockDataGridView.ReadOnly = true;
-            this._1_stockDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this._1_stockDataGridView.Size = new System.Drawing.Size(996, 426);
-            this._1_stockDataGridView.TabIndex = 0;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "cod_pro_stock";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Código de Producto";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "nombre";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "stk_act";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Stock actual";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "stk_opt";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Stock óptimo";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "stk_cri";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Stock crítico";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "cod_cat";
-            this.dataGridViewTextBoxColumn6.DataSource = this.categoriaBindingSource;
-            this.dataGridViewTextBoxColumn6.DisplayMember = "nombre";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Categoría";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            this.dataGridViewTextBoxColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewTextBoxColumn6.ValueMember = "cod_cat";
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.tabPage3.Controls.Add(this.ActualizarButton);
-            this.tabPage3.Controls.Add(this.dataGridView1);
-            this.tabPage3.Location = new System.Drawing.Point(4, 26);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1012, 620);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Productos por marca";
-            // 
-            // ActualizarButton
-            // 
-            this.ActualizarButton.AutoSize = true;
-            this.ActualizarButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ActualizarButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ActualizarButton.Depth = 0;
-            this.ActualizarButton.Location = new System.Drawing.Point(42, 23);
-            this.ActualizarButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.ActualizarButton.MouseState = MaterialSkin.MouseState.HOVER;
-            this.ActualizarButton.Name = "ActualizarButton";
-            this.ActualizarButton.Primary = false;
-            this.ActualizarButton.Size = new System.Drawing.Size(94, 36);
-            this.ActualizarButton.TabIndex = 3;
-            this.ActualizarButton.Text = "Actualizar";
-            this.ActualizarButton.UseVisualStyleBackColor = true;
-            this.ActualizarButton.Click += new System.EventHandler(this.ActualizarButton_Click);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.codprostockDataGridViewTextBoxColumn,
-            this.codmarDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.stockmarcaBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(8, 82);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(446, 416);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // codprostockDataGridViewTextBoxColumn
-            // 
-            this.codprostockDataGridViewTextBoxColumn.DataPropertyName = "cod_pro_stock";
-            this.codprostockDataGridViewTextBoxColumn.DataSource = this._1_stockBindingSource;
-            this.codprostockDataGridViewTextBoxColumn.DisplayMember = "nombre";
-            this.codprostockDataGridViewTextBoxColumn.HeaderText = "Producto";
-            this.codprostockDataGridViewTextBoxColumn.Name = "codprostockDataGridViewTextBoxColumn";
-            this.codprostockDataGridViewTextBoxColumn.ReadOnly = true;
-            this.codprostockDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.codprostockDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.codprostockDataGridViewTextBoxColumn.ValueMember = "cod_pro_stock";
-            this.codprostockDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // codmarDataGridViewTextBoxColumn
-            // 
-            this.codmarDataGridViewTextBoxColumn.DataPropertyName = "cod_mar";
-            this.codmarDataGridViewTextBoxColumn.DataSource = this.marcaBindingSource;
-            this.codmarDataGridViewTextBoxColumn.DisplayMember = "nombre";
-            this.codmarDataGridViewTextBoxColumn.HeaderText = "Marca";
-            this.codmarDataGridViewTextBoxColumn.Name = "codmarDataGridViewTextBoxColumn";
-            this.codmarDataGridViewTextBoxColumn.ReadOnly = true;
-            this.codmarDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.codmarDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.codmarDataGridViewTextBoxColumn.ValueMember = "cod_mar";
-            this.codmarDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // stockmarcaBindingSource
-            // 
-            this.stockmarcaBindingSource.DataMember = "1_stock_marca";
-            this.stockmarcaBindingSource.DataSource = this.capaDatosDataSet;
-            // 
-            // _1_stockTableAdapter
-            // 
-            this._1_stockTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager._1_banco_proveedorTableAdapter = null;
-            this.tableAdapterManager._1_bien_usoTableAdapter = null;
-            this.tableAdapterManager._1_buso_proveedorTableAdapter = null;
-            this.tableAdapterManager._1_buso_scTableAdapter = null;
-            this.tableAdapterManager._1_categoriaTableAdapter = this._1_categoriaTableAdapter;
-            this.tableAdapterManager._1_cotizacion_pedido_reaprovisionamientoTableAdapter = null;
-            this.tableAdapterManager._1_cotizacion_solicitud_compraTableAdapter = null;
-            this.tableAdapterManager._1_cotizacionTableAdapter = null;
-            this.tableAdapterManager._1_cuenta_corriente_proveedorTableAdapter = null;
-            this.tableAdapterManager._1_empleadoTableAdapter = null;
-            this.tableAdapterManager._1_factura_proveedorTableAdapter = null;
-            this.tableAdapterManager._1_informe_recepcionTableAdapter = null;
-            this.tableAdapterManager._1_marca_busoTableAdapter = null;
-            this.tableAdapterManager._1_marcaTableAdapter = null;
-            this.tableAdapterManager._1_medidaTableAdapter = null;
-            this.tableAdapterManager._1_nota_creditoTableAdapter = null;
-            this.tableAdapterManager._1_orden_compraTableAdapter = null;
-            this.tableAdapterManager._1_pedido_devolucionTableAdapter = null;
-            this.tableAdapterManager._1_pedido_reaprovisionamientoTableAdapter = null;
-            this.tableAdapterManager._1_producto_recibidoTableAdapter = null;
-            this.tableAdapterManager._1_proveedorTableAdapter = null;
-            this.tableAdapterManager._1_registracionTableAdapter = null;
-            this.tableAdapterManager._1_remito_proveedorTableAdapter = null;
-            this.tableAdapterManager._1_rolTableAdapter = null;
-            this.tableAdapterManager._1_solicitud_compraTableAdapter = null;
-            this.tableAdapterManager._1_stock_marcaTableAdapter = null;
-            this.tableAdapterManager._1_stock_medidaTableAdapter = null;
-            this.tableAdapterManager._1_stock_proveedorTableAdapter = null;
-            this.tableAdapterManager._1_stock_prTableAdapter = null;
-            this.tableAdapterManager._1_stockTableAdapter = this._1_stockTableAdapter;
-            this.tableAdapterManager._1_usuario_rolTableAdapter = null;
-            this.tableAdapterManager._1_usuarioTableAdapter = null;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.UpdateOrder = CapaUsuario.CapaDatosDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1020, 650);
+            this.tabControl1.TabIndex = 0;
             // 
             // _1_categoriaTableAdapter
             // 
@@ -795,6 +760,10 @@
             // 
             this._1_stock_marcaTableAdapter.ClearBeforeFill = true;
             // 
+            // _1_stockTableAdapter
+            // 
+            this._1_stockTableAdapter.ClearBeforeFill = true;
+            // 
             // _1_marcaTableAdapter
             // 
             this._1_marcaTableAdapter.ClearBeforeFill = true;
@@ -803,10 +772,42 @@
             // 
             this._1_medidaTableAdapter.ClearBeforeFill = true;
             // 
-            // errorProvider1
+            // tableAdapterManager1
             // 
-            this.errorProvider1.ContainerControl = this;
-            this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
+            this.tableAdapterManager1._1_banco_proveedorTableAdapter = null;
+            this.tableAdapterManager1._1_bien_usoTableAdapter = null;
+            this.tableAdapterManager1._1_buso_proveedorTableAdapter = null;
+            this.tableAdapterManager1._1_buso_scTableAdapter = null;
+            this.tableAdapterManager1._1_categoriaTableAdapter = this._1_categoriaTableAdapter;
+            this.tableAdapterManager1._1_cotizacion_pedido_reaprovisionamientoTableAdapter = null;
+            this.tableAdapterManager1._1_cotizacion_solicitud_compraTableAdapter = null;
+            this.tableAdapterManager1._1_cotizacionTableAdapter = null;
+            this.tableAdapterManager1._1_cuenta_corriente_proveedorTableAdapter = null;
+            this.tableAdapterManager1._1_empleadoTableAdapter = null;
+            this.tableAdapterManager1._1_factura_proveedorTableAdapter = null;
+            this.tableAdapterManager1._1_informe_recepcionTableAdapter = null;
+            this.tableAdapterManager1._1_marca_busoTableAdapter = null;
+            this.tableAdapterManager1._1_marcaTableAdapter = this._1_marcaTableAdapter;
+            this.tableAdapterManager1._1_medidaTableAdapter = this._1_medidaTableAdapter;
+            this.tableAdapterManager1._1_nota_creditoTableAdapter = null;
+            this.tableAdapterManager1._1_orden_compraTableAdapter = null;
+            this.tableAdapterManager1._1_pedido_devolucionTableAdapter = null;
+            this.tableAdapterManager1._1_pedido_reaprovisionamientoTableAdapter = null;
+            this.tableAdapterManager1._1_producto_recibidoTableAdapter = null;
+            this.tableAdapterManager1._1_proveedorTableAdapter = null;
+            this.tableAdapterManager1._1_registracionTableAdapter = null;
+            this.tableAdapterManager1._1_remito_proveedorTableAdapter = null;
+            this.tableAdapterManager1._1_rolTableAdapter = null;
+            this.tableAdapterManager1._1_solicitud_compraTableAdapter = null;
+            this.tableAdapterManager1._1_stock_marcaTableAdapter = this._1_stock_marcaTableAdapter;
+            this.tableAdapterManager1._1_stock_medidaTableAdapter = null;
+            this.tableAdapterManager1._1_stock_proveedorTableAdapter = null;
+            this.tableAdapterManager1._1_stock_prTableAdapter = null;
+            this.tableAdapterManager1._1_stockTableAdapter = this._1_stockTableAdapter;
+            this.tableAdapterManager1._1_usuario_rolTableAdapter = null;
+            this.tableAdapterManager1._1_usuarioTableAdapter = null;
+            this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager1.UpdateOrder = CapaUsuario.CapaUsuarioDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // FrmStock
             // 
@@ -820,45 +821,51 @@
             this.Text = "Stock";
             this.Load += new System.EventHandler(this.FrmStock_Load);
             this.SizeChanged += new System.EventHandler(this.FrmStock_SizeChanged);
-            this.tabControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.capaUsuarioDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.marcaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockmarcaBindingSource)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this._1_stockDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.marcaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.capaDatosDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.medidaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._1_stockBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoriaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._1_stockBindingNavigator)).EndInit();
             this._1_stockBindingNavigator.ResumeLayout(false);
             this._1_stockBindingNavigator.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this._1_stockDataGridView)).EndInit();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stockmarcaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+        private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
-        private CapaDatosDataSet capaDatosDataSet;
-        private System.Windows.Forms.BindingSource _1_stockBindingSource;
-        private CapaDatosDataSetTableAdapters._1_stockTableAdapter _1_stockTableAdapter;
-        private CapaDatosDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.DataGridView _1_stockDataGridView;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private MaterialSkin.Controls.MaterialRaisedButton CancelarMarcaMedida;
+        private System.Windows.Forms.Label label4;
+        private MaterialSkin.Controls.MaterialRaisedButton GuardarMarcaMedidaButton;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox MarcaComboBox;
+        private System.Windows.Forms.ComboBox MedidaComboBox;
+        private MaterialSkin.Controls.MaterialRaisedButton AgregarMarcaMedidaButton;
+        private System.Windows.Forms.TextBox stk_actTextBox;
+        private System.Windows.Forms.TextBox StockCriticoTextBox;
+        private System.Windows.Forms.TextBox StockOptimoTextBox;
+        private System.Windows.Forms.TextBox NombreTextBox;
+        private System.Windows.Forms.TextBox cod_pro_stockTextBox;
+        private System.Windows.Forms.ComboBox CategoriaComboBox;
         private System.Windows.Forms.BindingNavigator _1_stockBindingNavigator;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
@@ -867,43 +874,37 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton StockBindingNavigatorSaveItem;
-        private CapaDatosDataSetTableAdapters._1_categoriaTableAdapter _1_categoriaTableAdapter;
-        private System.Windows.Forms.BindingSource categoriaBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.BindingSource stockmarcaBindingSource;
-        private CapaDatosDataSetTableAdapters._1_stock_marcaTableAdapter _1_stock_marcaTableAdapter;
-        private System.Windows.Forms.BindingSource marcaBindingSource;
-        private CapaDatosDataSetTableAdapters._1_marcaTableAdapter _1_marcaTableAdapter;
-        private System.Windows.Forms.DataGridViewComboBoxColumn codprostockDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn codmarDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox CategoriaComboBox;
-        private System.Windows.Forms.TextBox StockCriticoTextBox;
-        private System.Windows.Forms.TextBox StockOptimoTextBox;
-        private System.Windows.Forms.TextBox NombreTextBox;
-        private System.Windows.Forms.TextBox cod_pro_stockTextBox;
-        private System.Windows.Forms.ComboBox MedidaComboBox;
-        private System.Windows.Forms.ComboBox MarcaComboBox;
-        private System.Windows.Forms.BindingSource medidaBindingSource;
-        private CapaDatosDataSetTableAdapters._1_medidaTableAdapter _1_medidaTableAdapter;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorEditItem;
+        private System.Windows.Forms.ToolStripButton StockBindingNavigatorSaveItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorCancel;
         private System.Windows.Forms.ToolStripButton bindingNavigatorSearchItem;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
-        private MaterialSkin.Controls.MaterialRaisedButton AgregarMarcaMedidaButton;
-        private System.Windows.Forms.TextBox stk_actTextBox;
-        private MaterialSkin.Controls.MaterialRaisedButton CancelarMarcaMedida;
-        private MaterialSkin.Controls.MaterialRaisedButton GuardarMarcaMedidaButton;
+        private System.Windows.Forms.TabPage tabPage2;
         private MaterialSkin.Controls.MaterialFlatButton ActualizarStockButton;
+        private System.Windows.Forms.DataGridView _1_stockDataGridView;
+        private System.Windows.Forms.TabPage tabPage3;
         private MaterialSkin.Controls.MaterialFlatButton ActualizarButton;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private CapaUsuarioDataSet capaUsuarioDataSet;
+        private System.Windows.Forms.BindingSource categoriaBindingSource;
+        private CapaUsuarioDataSetTableAdapters._1_categoriaTableAdapter _1_categoriaTableAdapter;
+        private System.Windows.Forms.BindingSource stockmarcaBindingSource;
+        private CapaUsuarioDataSetTableAdapters._1_stock_marcaTableAdapter _1_stock_marcaTableAdapter;
+        private System.Windows.Forms.BindingSource stockBindingSource;
+        private CapaUsuarioDataSetTableAdapters._1_stockTableAdapter _1_stockTableAdapter;
+        private System.Windows.Forms.BindingSource marcaBindingSource;
+        private CapaUsuarioDataSetTableAdapters._1_marcaTableAdapter _1_marcaTableAdapter;
+        private System.Windows.Forms.BindingSource medidaBindingSource;
+        private CapaUsuarioDataSetTableAdapters._1_medidaTableAdapter _1_medidaTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codprostockDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stkactDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stkoptDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stkcriDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn codcatDataGridViewTextBoxColumn;
+        private CapaUsuarioDataSetTableAdapters.TableAdapterManager tableAdapterManager1;
+        private System.Windows.Forms.DataGridViewComboBoxColumn codprostockDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn codmarDataGridViewTextBoxColumn;
     }
 }

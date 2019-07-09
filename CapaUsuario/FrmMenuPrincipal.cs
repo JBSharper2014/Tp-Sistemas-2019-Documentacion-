@@ -1,6 +1,7 @@
 ﻿
 using CapaDatos;
 using CapaUsuario.Compras;
+using CapaUsuario.Compras.Bienes_de_uso;
 using MetroFramework.Forms;
 using System;
 using System.Collections.Generic;
@@ -24,7 +25,7 @@ namespace CapaUsuario
 
         Timer t1 = new Timer();
 
-        private FrmBienUso clientes;
+        private FrmBienUso bienesDeUso;
         private FrmStock stock;
 
         public FrmMenuPrincipal()
@@ -84,14 +85,14 @@ namespace CapaUsuario
 
         private void bienesDeUsoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (clientes == null || clientes.IsDisposed)
+            if (bienesDeUso == null || bienesDeUso.IsDisposed)
             {
-                clientes = new FrmBienUso
+                bienesDeUso = new FrmBienUso
                 {
                     MdiParent = this,
                     //UsuarioLogueado = usuarioLogueado
                 };
-                clientes.Show();
+                bienesDeUso.Show();
             }
             else
             {
