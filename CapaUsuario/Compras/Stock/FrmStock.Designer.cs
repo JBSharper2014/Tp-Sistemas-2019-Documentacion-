@@ -60,7 +60,6 @@
             this.stk_criNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.stk_optNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.CancelarMarcaMedida = new MaterialSkin.Controls.MaterialRaisedButton();
             this.label4 = new System.Windows.Forms.Label();
             this.GuardarMarcaMedidaButton = new MaterialSkin.Controls.MaterialRaisedButton();
             this.label5 = new System.Windows.Forms.Label();
@@ -95,6 +94,7 @@
             this._1_marcaTableAdapter = new CapaUsuario.CapaUsuarioDataSetTableAdapters._1_marcaTableAdapter();
             this._1_medidaTableAdapter = new CapaUsuario.CapaUsuarioDataSetTableAdapters._1_medidaTableAdapter();
             this.tableAdapterManager1 = new CapaUsuario.CapaUsuarioDataSetTableAdapters.TableAdapterManager();
+            this.CancelarMarcaMedida = new MaterialSkin.Controls.MaterialFlatButton();
             cod_pro_stockLabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
             cod_catLabel = new System.Windows.Forms.Label();
@@ -454,21 +454,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Marca y medida";
             // 
-            // CancelarMarcaMedida
-            // 
-            this.CancelarMarcaMedida.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CancelarMarcaMedida.Depth = 0;
-            this.CancelarMarcaMedida.Enabled = false;
-            this.CancelarMarcaMedida.Location = new System.Drawing.Point(670, 44);
-            this.CancelarMarcaMedida.MouseState = MaterialSkin.MouseState.HOVER;
-            this.CancelarMarcaMedida.Name = "CancelarMarcaMedida";
-            this.CancelarMarcaMedida.Primary = true;
-            this.CancelarMarcaMedida.Size = new System.Drawing.Size(130, 36);
-            this.CancelarMarcaMedida.TabIndex = 19;
-            this.CancelarMarcaMedida.Text = "Cancelar";
-            this.CancelarMarcaMedida.UseVisualStyleBackColor = true;
-            this.CancelarMarcaMedida.Click += new System.EventHandler(this.CancelarMarcaMedida_Click);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -483,7 +468,7 @@
             this.GuardarMarcaMedidaButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.GuardarMarcaMedidaButton.Depth = 0;
             this.GuardarMarcaMedidaButton.Enabled = false;
-            this.GuardarMarcaMedidaButton.Location = new System.Drawing.Point(504, 44);
+            this.GuardarMarcaMedidaButton.Location = new System.Drawing.Point(610, 44);
             this.GuardarMarcaMedidaButton.MouseState = MaterialSkin.MouseState.HOVER;
             this.GuardarMarcaMedidaButton.Name = "GuardarMarcaMedidaButton";
             this.GuardarMarcaMedidaButton.Primary = true;
@@ -820,6 +805,24 @@
             this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager1.UpdateOrder = CapaUsuario.CapaUsuarioDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
+            // CancelarMarcaMedida
+            // 
+            this.CancelarMarcaMedida.AutoSize = true;
+            this.CancelarMarcaMedida.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.CancelarMarcaMedida.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CancelarMarcaMedida.Depth = 0;
+            this.CancelarMarcaMedida.Enabled = false;
+            this.CancelarMarcaMedida.Location = new System.Drawing.Point(497, 44);
+            this.CancelarMarcaMedida.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.CancelarMarcaMedida.MouseState = MaterialSkin.MouseState.HOVER;
+            this.CancelarMarcaMedida.Name = "CancelarMarcaMedida";
+            this.CancelarMarcaMedida.Primary = false;
+            this.CancelarMarcaMedida.Size = new System.Drawing.Size(82, 36);
+            this.CancelarMarcaMedida.TabIndex = 19;
+            this.CancelarMarcaMedida.Text = "Cancelar";
+            this.CancelarMarcaMedida.UseVisualStyleBackColor = true;
+            this.CancelarMarcaMedida.Click += new System.EventHandler(this.CancelarMarcaMedida_Click_1);
+            // 
             // FrmStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -864,7 +867,6 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private MaterialSkin.Controls.MaterialRaisedButton CancelarMarcaMedida;
         private System.Windows.Forms.Label label4;
         private MaterialSkin.Controls.MaterialRaisedButton GuardarMarcaMedidaButton;
         private System.Windows.Forms.Label label5;
@@ -919,5 +921,6 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn codmarDataGridViewTextBoxColumn;
         private System.Windows.Forms.NumericUpDown stk_criNumericUpDown;
         private System.Windows.Forms.NumericUpDown stk_optNumericUpDown;
+        private MaterialSkin.Controls.MaterialFlatButton CancelarMarcaMedida;
     }
 }

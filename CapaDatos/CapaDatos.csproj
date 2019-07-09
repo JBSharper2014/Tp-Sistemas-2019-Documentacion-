@@ -59,6 +59,7 @@
     </Compile>
     <Compile Include="DEmpleado.cs" />
     <Compile Include="DMedida.cs" />
+    <Compile Include="DProveedores.cs" />
     <Compile Include="DStockMarca.cs" />
     <Compile Include="DStockMedida.cs" />
     <Compile Include="DUsuario.cs" />

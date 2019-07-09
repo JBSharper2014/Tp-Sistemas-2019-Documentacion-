@@ -40,9 +40,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmProveedores));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.CancelarButton = new MaterialSkin.Controls.MaterialFlatButton();
+            this.GuardarButton = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.ProductosComboBox = new System.Windows.Forms.ComboBox();
+            this.bienusoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.capaUsuarioDataSet = new CapaUsuario.CapaUsuarioDataSet();
+            this.ButtonAgregar = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.tipo_productoComboBox = new System.Windows.Forms.ComboBox();
             this._1_proveedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.capaUsuarioDataSet = new CapaUsuario.CapaUsuarioDataSet();
             this.razon_socialTextBox = new System.Windows.Forms.TextBox();
             this.emailTextBox = new System.Windows.Forms.TextBox();
             this.cod_postalTextBox = new System.Windows.Forms.TextBox();
@@ -79,6 +86,9 @@
             this._1_proveedorTableAdapter = new CapaUsuario.CapaUsuarioDataSetTableAdapters._1_proveedorTableAdapter();
             this.tableAdapterManager = new CapaUsuario.CapaUsuarioDataSetTableAdapters.TableAdapterManager();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this._1_bien_usoTableAdapter = new CapaUsuario.CapaUsuarioDataSetTableAdapters._1_bien_usoTableAdapter();
+            this.stockBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this._1_stockTableAdapter = new CapaUsuario.CapaUsuarioDataSetTableAdapters._1_stockTableAdapter();
             cod_proveedorLabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
             numero_telefonoLabel = new System.Windows.Forms.Label();
@@ -89,13 +99,16 @@
             tipo_productoLabel = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this._1_proveedorBindingSource)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bienusoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.capaUsuarioDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._1_proveedorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._1_proveedorBindingNavigator)).BeginInit();
             this._1_proveedorBindingNavigator.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._1_proveedorDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // cod_proveedorLabel
@@ -186,11 +199,14 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(987, 512);
+            this.tabControl1.Size = new System.Drawing.Size(1042, 627);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.tabPage1.Controls.Add(this.groupBox1);
+            this.tabPage1.Controls.Add(this.comboBox1);
             this.tabPage1.Controls.Add(tipo_productoLabel);
             this.tabPage1.Controls.Add(this.tipo_productoComboBox);
             this.tabPage1.Controls.Add(razon_socialLabel);
@@ -211,10 +227,102 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 26);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(979, 482);
+            this.tabPage1.Size = new System.Drawing.Size(1034, 597);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Mantenimiento";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.CancelarButton);
+            this.groupBox1.Controls.Add(this.GuardarButton);
+            this.groupBox1.Controls.Add(this.ProductosComboBox);
+            this.groupBox1.Controls.Add(this.ButtonAgregar);
+            this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semilight", 11F);
+            this.groupBox1.Location = new System.Drawing.Point(147, 330);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(720, 205);
+            this.groupBox1.TabIndex = 18;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Agregar producto o bien de uso ( según selección en \'Tipo de producto\' )";
+            // 
+            // CancelarButton
+            // 
+            this.CancelarButton.AutoSize = true;
+            this.CancelarButton.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.CancelarButton.BackColor = System.Drawing.Color.Transparent;
+            this.CancelarButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CancelarButton.Depth = 0;
+            this.CancelarButton.Enabled = false;
+            this.CancelarButton.Location = new System.Drawing.Point(378, 115);
+            this.CancelarButton.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.CancelarButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.CancelarButton.Name = "CancelarButton";
+            this.CancelarButton.Primary = false;
+            this.CancelarButton.Size = new System.Drawing.Size(82, 36);
+            this.CancelarButton.TabIndex = 3;
+            this.CancelarButton.Text = "Cancelar";
+            this.CancelarButton.UseVisualStyleBackColor = false;
+            this.CancelarButton.Click += new System.EventHandler(this.CancelarButton_Click);
+            // 
+            // GuardarButton
+            // 
+            this.GuardarButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.GuardarButton.Depth = 0;
+            this.GuardarButton.Enabled = false;
+            this.GuardarButton.Location = new System.Drawing.Point(478, 116);
+            this.GuardarButton.MouseState = MaterialSkin.MouseState.HOVER;
+            this.GuardarButton.Name = "GuardarButton";
+            this.GuardarButton.Primary = true;
+            this.GuardarButton.Size = new System.Drawing.Size(137, 34);
+            this.GuardarButton.TabIndex = 2;
+            this.GuardarButton.Text = "Guardar";
+            this.GuardarButton.UseVisualStyleBackColor = true;
+            this.GuardarButton.Click += new System.EventHandler(this.GuardarButton_Click);
+            // 
+            // ProductosComboBox
+            // 
+            this.ProductosComboBox.DataSource = this.bienusoBindingSource;
+            this.ProductosComboBox.DisplayMember = "nombre";
+            this.ProductosComboBox.Enabled = false;
+            this.ProductosComboBox.Font = new System.Drawing.Font("Segoe UI Semilight", 11F);
+            this.ProductosComboBox.FormattingEnabled = true;
+            this.ProductosComboBox.Location = new System.Drawing.Point(82, 119);
+            this.ProductosComboBox.Name = "ProductosComboBox";
+            this.ProductosComboBox.Size = new System.Drawing.Size(231, 28);
+            this.ProductosComboBox.TabIndex = 1;
+            this.ProductosComboBox.ValueMember = "cod_pro_buso";
+            // 
+            // bienusoBindingSource
+            // 
+            this.bienusoBindingSource.DataMember = "1_bien_uso";
+            this.bienusoBindingSource.DataSource = this.capaUsuarioDataSet;
+            // 
+            // capaUsuarioDataSet
+            // 
+            this.capaUsuarioDataSet.DataSetName = "CapaUsuarioDataSet";
+            this.capaUsuarioDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // ButtonAgregar
+            // 
+            this.ButtonAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ButtonAgregar.Depth = 0;
+            this.ButtonAgregar.Location = new System.Drawing.Point(82, 54);
+            this.ButtonAgregar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.ButtonAgregar.Name = "ButtonAgregar";
+            this.ButtonAgregar.Primary = true;
+            this.ButtonAgregar.Size = new System.Drawing.Size(137, 34);
+            this.ButtonAgregar.TabIndex = 0;
+            this.ButtonAgregar.Text = "Agregar";
+            this.ButtonAgregar.UseVisualStyleBackColor = true;
+            this.ButtonAgregar.Click += new System.EventHandler(this.ButtonAgregar_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(255, 393);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(218, 25);
+            this.comboBox1.TabIndex = 17;
             // 
             // tipo_productoComboBox
             // 
@@ -229,16 +337,12 @@
             this.tipo_productoComboBox.Name = "tipo_productoComboBox";
             this.tipo_productoComboBox.Size = new System.Drawing.Size(213, 28);
             this.tipo_productoComboBox.TabIndex = 16;
+            this.tipo_productoComboBox.SelectedIndexChanged += new System.EventHandler(this.Tipo_productoComboBox_SelectedIndexChanged);
             // 
             // _1_proveedorBindingSource
             // 
             this._1_proveedorBindingSource.DataMember = "1_proveedor";
             this._1_proveedorBindingSource.DataSource = this.capaUsuarioDataSet;
-            // 
-            // capaUsuarioDataSet
-            // 
-            this.capaUsuarioDataSet.DataSetName = "CapaUsuarioDataSet";
-            this.capaUsuarioDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // razon_socialTextBox
             // 
@@ -346,7 +450,7 @@
             this._1_proveedorBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this._1_proveedorBindingNavigator.Name = "_1_proveedorBindingNavigator";
             this._1_proveedorBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this._1_proveedorBindingNavigator.Size = new System.Drawing.Size(973, 35);
+            this._1_proveedorBindingNavigator.Size = new System.Drawing.Size(1028, 35);
             this._1_proveedorBindingNavigator.TabIndex = 1;
             this._1_proveedorBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -466,6 +570,7 @@
             this.bindingNavigatorCancel.Name = "bindingNavigatorCancel";
             this.bindingNavigatorCancel.Size = new System.Drawing.Size(32, 32);
             this.bindingNavigatorCancel.Text = "Cancelar operación";
+            this.bindingNavigatorCancel.Click += new System.EventHandler(this.bindingNavigatorCancel_Click);
             // 
             // bindingNavigatorSearchItem
             // 
@@ -482,7 +587,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 26);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(979, 482);
+            this.tabPage2.Size = new System.Drawing.Size(1034, 597);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Listado";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -616,11 +721,24 @@
             this.errorProvider1.ContainerControl = this;
             this.errorProvider1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvider1.Icon")));
             // 
+            // _1_bien_usoTableAdapter
+            // 
+            this._1_bien_usoTableAdapter.ClearBeforeFill = true;
+            // 
+            // stockBindingSource
+            // 
+            this.stockBindingSource.DataMember = "1_stock";
+            this.stockBindingSource.DataSource = this.capaUsuarioDataSet;
+            // 
+            // _1_stockTableAdapter
+            // 
+            this._1_stockTableAdapter.ClearBeforeFill = true;
+            // 
             // FrmProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(987, 512);
+            this.ClientSize = new System.Drawing.Size(1042, 627);
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Segoe UI Semilight", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -633,14 +751,18 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this._1_proveedorBindingSource)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bienusoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.capaUsuarioDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._1_proveedorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._1_proveedorBindingNavigator)).EndInit();
             this._1_proveedorBindingNavigator.ResumeLayout(false);
             this._1_proveedorBindingNavigator.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this._1_proveedorDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stockBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -688,5 +810,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private MaterialSkin.Controls.MaterialRaisedButton ButtonAgregar;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox ProductosComboBox;
+        private MaterialSkin.Controls.MaterialFlatButton CancelarButton;
+        private MaterialSkin.Controls.MaterialRaisedButton GuardarButton;
+        private System.Windows.Forms.BindingSource bienusoBindingSource;
+        private CapaUsuarioDataSetTableAdapters._1_bien_usoTableAdapter _1_bien_usoTableAdapter;
+        private System.Windows.Forms.BindingSource stockBindingSource;
+        private CapaUsuarioDataSetTableAdapters._1_stockTableAdapter _1_stockTableAdapter;
     }
 }

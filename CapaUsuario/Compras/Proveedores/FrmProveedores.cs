@@ -188,6 +188,10 @@ namespace CapaUsuario.Compras.Proveedores
 
         private void FrmProveedores_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla 'capaUsuarioDataSet._1_stock' Puede moverla o quitarla según sea necesario.
+            this._1_stockTableAdapter.Fill(this.capaUsuarioDataSet._1_stock);
+            // TODO: esta línea de código carga datos en la tabla 'capaUsuarioDataSet._1_bien_uso' Puede moverla o quitarla según sea necesario.
+            this._1_bien_usoTableAdapter.Fill(this.capaUsuarioDataSet._1_bien_uso);
             // TODO: esta línea de código carga datos en la tabla 'capaUsuarioDataSet._1_proveedor' Puede moverla o quitarla según sea necesario.
             _1_proveedorTableAdapter.Fill(capaUsuarioDataSet._1_proveedor);
             FrmProveedores_SizeChanged(sender, e);
@@ -219,7 +223,7 @@ namespace CapaUsuario.Compras.Proveedores
             tipo_productoComboBox.Enabled = true;
 
             tipo_productoComboBox.SelectedIndex = -1;
-            
+
             bindingNavigatorCancel.Enabled = true;
             _1_proveedorBindingNavigatorSaveItem.Enabled = true;
 
@@ -248,7 +252,7 @@ namespace CapaUsuario.Compras.Proveedores
             emailTextBox.ReadOnly = true;
             razon_socialTextBox.ReadOnly = true;
             tipo_productoComboBox.Enabled = false;
-            
+
 
             bindingNavigatorCancel.Enabled = false;
             _1_proveedorBindingNavigatorSaveItem.Enabled = false;
@@ -270,7 +274,9 @@ namespace CapaUsuario.Compras.Proveedores
         private void bindingNavigatorEditItem_Click(object sender, EventArgs e)
         {
             nuevo = false;
+            var index = tipo_productoComboBox.SelectedIndex;
             HabilitarCampos();
+            tipo_productoComboBox.SelectedIndex = index;
         }
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
@@ -294,6 +300,97 @@ namespace CapaUsuario.Compras.Proveedores
                                    MessageBoxIcon.Exclamation);
                 return;
             }
+        }
+
+        private void bindingNavigatorCancel_Click(object sender, EventArgs e)
+        {
+            _1_proveedorBindingSource.CancelEdit();
+            errorProvider1.Dispose();
+            DeshabilitarCampos();
+        }
+
+        private void Tipo_productoComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tipo_productoComboBox.SelectedIndex == -1)
+            {
+                ProductosComboBox.SelectedIndex = -1;
+                return;
+            }
+            else if (tipo_productoComboBox.SelectedIndex == 0)
+            {
+                ProductosComboBox.DataSource = null;
+                ProductosComboBox.DataSource = bienusoBindingSource;
+                ProductosComboBox.DisplayMember = "nombre";
+                ProductosComboBox.ValueMember = "cod_pro_buso";
+                return;
+            }
+            else
+            {
+                ProductosComboBox.DataSource = null;
+                ProductosComboBox.DataSource = stockBindingSource;
+                ProductosComboBox.DisplayMember = "nombre";
+                ProductosComboBox.ValueMember = "cod_pro_stock";
+                return;
+            }
+
+
+        }
+
+        private void ButtonAgregar_Click(object sender, EventArgs e)
+        {
+            ProductosComboBox.Enabled = true;
+            GuardarButton.Enabled = true;
+            CancelarButton.Enabled = true;
+            ButtonAgregar.Enabled = false;
+            _1_proveedorBindingNavigator.Enabled = false;
+        }
+
+        private void CancelarButton_Click(object sender, EventArgs e)
+        {
+            ProductosComboBox.Enabled = false;
+            GuardarButton.Enabled = false;
+            CancelarButton.Enabled = false;
+            ButtonAgregar.Enabled = true;
+            _1_proveedorBindingNavigator.Enabled = true;
+        }
+
+        private void GuardarButton_Click(object sender, EventArgs e)
+        {
+            if (!ValidarSeleccion()) return;
+
+            var dproveedores = new DProveedores();
+
+            int codProveedor = Convert.ToInt32(cod_proveedorTextBox.Text);
+            
+
+            if (tipo_productoComboBox.SelectedIndex == 0)
+            {
+                int codBienUso = (int)ProductosComboBox.SelectedValue;
+                string msg = dproveedores.InsertBienUsoProveedor(codProveedor, codBienUso);
+                MessageBox.Show(msg, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                int codStock = (int)ProductosComboBox.SelectedValue;
+                string msg2 = dproveedores.InsertStockProveedor(codProveedor, codStock);
+                MessageBox.Show(msg2, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            CancelarButton_Click(sender, e);
+            
+        }
+
+        private bool ValidarSeleccion()
+        {
+            if (ProductosComboBox.SelectedIndex == -1)
+            {
+                errorProvider1.SetError(ProductosComboBox, "Debe seleccionar un producto o bien de uso");
+                ProductosComboBox.Focus();
+                return false;
+            }
+            errorProvider1.Clear();
+
+            return true;
         }
     }
 }

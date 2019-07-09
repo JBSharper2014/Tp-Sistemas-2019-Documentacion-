@@ -237,6 +237,7 @@ namespace CapaUsuario.Compras
             CancelarMarcaMedida.Enabled = true;
             MarcaComboBox.Enabled = true;
             MedidaComboBox.Enabled = true;
+            _1_stockBindingNavigator.Enabled = false;
         }
 
         private void CancelarMarcaMedida_Click(object sender, EventArgs e)
@@ -248,6 +249,7 @@ namespace CapaUsuario.Compras
             CancelarMarcaMedida.Enabled = false;
             MarcaComboBox.Enabled = false;
             MedidaComboBox.Enabled = false;
+            _1_stockBindingNavigator.Enabled = true;
         }
 
         private void GuardarMarcaMedidaButton_Click(object sender, EventArgs e)
@@ -367,7 +369,8 @@ namespace CapaUsuario.Compras
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al eliminar: " + ex.Message + "\nCierre el formulario para recargar la información", "Mensaje", MessageBoxButtons.OK,
+                MessageBox.Show("Error al eliminar: " + ex.Message + Environment.NewLine +
+                    "Cierre el formulario para recargar la información", "Mensaje", MessageBoxButtons.OK,
                                    MessageBoxIcon.Exclamation);
                 return;
             }
@@ -389,6 +392,11 @@ namespace CapaUsuario.Compras
             //desde el binding source de proveedores y se lo iguala a la posicion del binding source (el grid)
             int position = stockBindingSource.Find("cod_pro_stock", miBusqueda.IDProducto);
             stockBindingSource.Position = position;
+        }
+
+        private void CancelarMarcaMedida_Click_1(object sender, EventArgs e)
+        {
+            CancelarMarcaMedida_Click(sender, e);
         }
     }
 }

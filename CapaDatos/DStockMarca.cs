@@ -1,9 +1,5 @@
 ﻿using CapaDatos.CapaDatosDataSetTableAdapters;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CapaDatos
 {
@@ -20,12 +16,12 @@ namespace CapaDatos
             try
             {
                 adapter.InsertStockMarca(cod_mar, cod_pro_stock);
-                respuesta = "Producto por marca agregado correctamente. ";
+                respuesta = "Producto por marca agregado correctamente.";
             }
             catch (Exception)
             {
-                respuesta = "No se pudo agregar el producto por marca. " +
-                    "\nYa existe el producto seleccionado con la marca seleccionada";
+                respuesta = "No se pudo agregar el producto por marca." + Environment.NewLine +
+                    "Ya existe el producto seleccionado con la marca seleccionada.";
             }
 
 
