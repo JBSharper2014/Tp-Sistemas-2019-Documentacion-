@@ -1,6 +1,5 @@
 ﻿using CapaDatos;
 using CapaUsuario.Compras.Stock;
-//using CapaUsuario.Compras.Stock;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -339,18 +338,32 @@ namespace CapaUsuario.Compras
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
-            DialogResult rta = MessageBox.Show("¿Está seguro de borrar el registro?", "Confirmación",
+            DialogResult rta = MessageBox.Show("¿Está seguro de borrar el registro?" +
+                Environment.NewLine + "Si continúa, borrará las referencias del producto con marca(s) y/o medida(s)", "Confirmación",
                MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
 
             if (rta == DialogResult.No) return;
-            
+
+
+            //En el futuro, se deberán agregar comprobaciones de interferencia en transacciones para evitar el borrado
+
+            //Comprobamos que ningún proveedor provea el producto
+            var dproveedores = new DProveedores();
+
+            int codProducto = Convert.ToInt32(cod_pro_stockTextBox.Text);
+            if (dproveedores.ExisteStockProveedor(codProducto))
+            {
+                MessageBox.Show("El producto tiene proveedores asociados, no puede eliminarse",
+                    "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
 
             //Borramos primero las referencia en stock_marca y stock_medida
             string msg, msg2;
             var stockMarca = new DStockMarca();
             var stockMedida = new DStockMedida();
 
-            int codProducto = Convert.ToInt32(cod_pro_stockTextBox.Text);
 
             msg = stockMarca.DeleteStockMarca(codProducto);
             msg2 = stockMedida.DeleteStockMedida(codProducto);
@@ -371,7 +384,7 @@ namespace CapaUsuario.Compras
             {
                 MessageBox.Show("Error al eliminar: " + ex.Message + Environment.NewLine +
                     "Cierre el formulario para recargar la información", "Mensaje", MessageBoxButtons.OK,
-                                   MessageBoxIcon.Exclamation);
+                                   MessageBoxIcon.Error);
                 return;
             }
 

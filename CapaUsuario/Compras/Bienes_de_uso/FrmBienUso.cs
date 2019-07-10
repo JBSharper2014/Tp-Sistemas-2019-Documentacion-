@@ -170,6 +170,16 @@ namespace CapaUsuario.Compras.Bienes_de_uso
 
             if (rta == DialogResult.No) return;
 
+            //Comprobamos que el bien de uso no tenga proveedores asociados
+            var dproveedores = new DProveedores();
+
+            if (dproveedores.ExisteBienUsoProveedor(Convert.ToInt32(cod_pro_busoTextBox.Text.Trim())))
+            {
+                MessageBox.Show("El bien de uso tiene proveedores asociados, no puede eliminarse",
+                   "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             try
             {
                 _1_bien_usoBindingSource.RemoveAt(_1_bien_usoBindingSource.Position);

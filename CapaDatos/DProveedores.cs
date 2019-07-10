@@ -51,5 +51,31 @@ namespace CapaDatos
             return respuesta;
         }
 
+        public bool ExisteStockProveedor(int cod_pro_stock)
+        {
+            if (adapterStock.ExisteStockProveedor(cod_pro_stock) == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+            
+        }
+
+        public bool ExisteBienUsoProveedor(int cod_pro_buso)
+        {
+            if (adapterBienUso.ExisteBienUsoProveedor(cod_pro_buso) == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+
+        }
+
     }
 }

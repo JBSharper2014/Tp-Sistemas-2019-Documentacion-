@@ -66,9 +66,10 @@
             this.pagosToolStripMenuItem,
             this.cobrosToolStripMenuItem,
             this.salirToolStripMenuItem});
+            this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1126, 48);
+            this.menuStrip1.Size = new System.Drawing.Size(1122, 48);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -115,7 +116,7 @@
             // 
             this.proveedoresToolStripMenuItem.Image = global::CapaUsuario.Properties.Resources.proveedores128;
             this.proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
-            this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(204, 46);
+            this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(184, 46);
             this.proveedoresToolStripMenuItem.Text = "&Proveedores";
             this.proveedoresToolStripMenuItem.Click += new System.EventHandler(this.proveedoresToolStripMenuItem_Click);
             // 
@@ -123,7 +124,7 @@
             // 
             this.cotizacionesToolStripMenuItem.Image = global::CapaUsuario.Properties.Resources.cotizacion96;
             this.cotizacionesToolStripMenuItem.Name = "cotizacionesToolStripMenuItem";
-            this.cotizacionesToolStripMenuItem.Size = new System.Drawing.Size(204, 46);
+            this.cotizacionesToolStripMenuItem.Size = new System.Drawing.Size(184, 46);
             this.cotizacionesToolStripMenuItem.Text = "&Cotizaciones";
             // 
             // cuentaCorrienteToolStripMenuItem
@@ -239,7 +240,7 @@
             this.NombresUsuarioToolStripStatusLabel});
             this.statusStrip1.Location = new System.Drawing.Point(0, 585);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1126, 25);
+            this.statusStrip1.Size = new System.Drawing.Size(1122, 25);
             this.statusStrip1.TabIndex = 3;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -254,14 +255,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1126, 610);
+            this.ClientSize = new System.Drawing.Size(1122, 610);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmMenuPrincipal";
-            this.Text = "Sistema Comercial";
+            this.Text = "Sistema comercial";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMenuPrincipal_FormClosing);
             this.Load += new System.EventHandler(this.FrmMenuPrincipal_Load);
