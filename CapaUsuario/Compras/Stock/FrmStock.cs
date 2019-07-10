@@ -339,7 +339,7 @@ namespace CapaUsuario.Compras
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
             DialogResult rta = MessageBox.Show("¿Está seguro de borrar el registro?" +
-                Environment.NewLine + "Si continúa, borrará las referencias del producto con marca(s) y/o medida(s)", "Confirmación",
+                Environment.NewLine + "Si continúa, borrará las asociaciones del producto con marca(s) y/o medida(s)", "Confirmación",
                MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
 
             if (rta == DialogResult.No) return;

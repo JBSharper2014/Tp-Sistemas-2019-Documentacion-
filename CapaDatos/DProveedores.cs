@@ -77,5 +77,41 @@ namespace CapaDatos
 
         }
 
+        public string DeleteStockProveedor(int cod_proveedor)
+        {
+            string respuesta;
+
+            try
+            {
+                adapterStock.DeleteStockProveedor(cod_proveedor);
+                respuesta = "Se eliminó la asociación del proveedor con los productos que proveía";
+            }
+            catch (Exception ex)
+            {
+                respuesta = "No se pudo eliminar la asociación del proveedor con los productos que provee:" +
+                    Environment.NewLine + ex.Message;
+            }
+
+            return respuesta;
+        }
+
+        public string DeleteBienesUsoProveedor(int cod_proveedor)
+        {
+            string respuesta;
+
+            try
+            {
+                adapterBienUso.DeleteBienesUsoProveedor(cod_proveedor);
+                respuesta = "Se eliminó la asociación del proveedor con los bienes de uso que proveía";
+            }
+            catch (Exception ex)
+            {
+                respuesta = "No se pudo eliminar la asociación del proveedor con los bienes de uso que provee:" +
+                    Environment.NewLine + ex.Message;
+            }
+
+            return respuesta;
+        }
+
     }
 }

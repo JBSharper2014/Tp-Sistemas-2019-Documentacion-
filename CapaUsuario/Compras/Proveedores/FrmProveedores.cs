@@ -43,6 +43,7 @@ namespace CapaUsuario.Compras.Proveedores
             }
 
             DeshabilitarCampos();
+            
             errorProvider1.Dispose();
 
         }
@@ -222,7 +223,9 @@ namespace CapaUsuario.Compras.Proveedores
             razon_socialTextBox.ReadOnly = false;
             tipo_productoComboBox.Enabled = true;
 
-            tipo_productoComboBox.SelectedIndex = -1;
+            if(!nuevo) { tipo_productoComboBox.SelectedIndex = -1; }
+
+            ButtonAgregar.Enabled = false;
 
             bindingNavigatorCancel.Enabled = true;
             _1_proveedorBindingNavigatorSaveItem.Enabled = true;
@@ -253,6 +256,7 @@ namespace CapaUsuario.Compras.Proveedores
             razon_socialTextBox.ReadOnly = true;
             tipo_productoComboBox.Enabled = false;
 
+            ButtonAgregar.Enabled = true;
 
             bindingNavigatorCancel.Enabled = false;
             _1_proveedorBindingNavigatorSaveItem.Enabled = false;
@@ -281,10 +285,25 @@ namespace CapaUsuario.Compras.Proveedores
 
         private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
         {
-            DialogResult rta = MessageBox.Show("¿Está seguro de borrar el registro?", "Confirmación",
+            DialogResult rta = MessageBox.Show("¿Está seguro de borrar el registro?" + Environment.NewLine +
+                "Si continúa, borrará las asociaciones del proveedor con el producto o bien de uso que provee", "Confirmación",
               MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
 
             if (rta == DialogResult.No) return;
+
+
+            var dproveedores = new DProveedores();
+
+            string msg, msg2;
+
+            msg = dproveedores.DeleteStockProveedor(Convert.ToInt32(cod_proveedorTextBox.Text));
+            msg2 = dproveedores.DeleteBienesUsoProveedor(Convert.ToInt32(cod_proveedorTextBox.Text));
+
+            MessageBox.Show(msg, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+            MessageBox.Show(msg2, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
 
             try
             {

@@ -555,7 +555,7 @@
             // 
             this._1_proveedorBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this._1_proveedorBindingNavigatorSaveItem.Enabled = false;
-            this._1_proveedorBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("_1_proveedorBindingNavigatorSaveItem.Image")));
+            this._1_proveedorBindingNavigatorSaveItem.Image = global::CapaUsuario.Properties.Resources.save3;
             this._1_proveedorBindingNavigatorSaveItem.Name = "_1_proveedorBindingNavigatorSaveItem";
             this._1_proveedorBindingNavigatorSaveItem.Size = new System.Drawing.Size(32, 32);
             this._1_proveedorBindingNavigatorSaveItem.Text = "Guardar datos";
