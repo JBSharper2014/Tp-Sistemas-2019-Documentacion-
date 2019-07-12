@@ -1,4 +1,10 @@
-```javascript class {}```
+```javascript
+function fancyAlert(arg) {
+  if(arg) {
+    $.facebox({div:'#foo'})
+  }
+}
+```
 {
 	"Compras": {
 		"Necesidades": {
@@ -42,4 +48,3 @@
 	}
 }
 
-```
