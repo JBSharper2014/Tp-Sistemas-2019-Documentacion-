@@ -1,8 +1,6 @@
-```JSONasPerl
-
 
 {
-	"Compras": {
+	## "Compras": {
 		"Necesidades": {
 			"Modificacion": "Se agrega texto al trabajo ya existente"
 		},
