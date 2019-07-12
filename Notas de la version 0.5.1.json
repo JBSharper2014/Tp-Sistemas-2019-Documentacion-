@@ -1,0 +1,42 @@
+{
+	"Compras": {
+		"Necesidades": {
+			"Modificacion": "Se agrega texto al trabajo ya existente"
+		},
+		"F1": {
+			"Pedido de reaprovisionamiento": "Se elimina la (A) de algunos campos que realmente no se dar�n el alta en ninguna tabla sino que solo se usan de consulta.",
+			"control de proveedores": {
+				"tabla proveedores": {
+					"Eliminacion1": "(A) de varios campos que no ser�n ingresados en tablas",
+					"Eliminacion2": "funcionalidad fecha de modificacion junto con su campo asociado"
+				},
+				"tabla cotizaciones": {
+					"Eliminacion1": "Campo fecha de emision que no era usado en ningun otro lado mas que en este documento",
+					"Eliminacion2": "de todas las (A) que no coinciden con una insercion real en ninguna tabla.",
+					"Eliminacion3": "de todas las modificaciones",
+					"Eliminacion4": "de la restriccion del campo 'vigente' al intentar borrar una cotizacion ya que nunca se implemento en la base de datos"
+				},
+				"tabla bancos": "AHORA LOS PROVEEDORES SON LOS QUE DAN EL ALTA A LOS BANCOS, se adhiere esa funcionalidad."
+			}
+		},
+		"Remito": "Eliminacion de las letras (A) de los campos que no se utilizar�n realmente en un alta.",
+		"Cuentas corrientes proveeodores": {
+			"Modificacion": "Se modifica sustancialmente la funcionalidad",
+			"Cambio1": "la entidad no creara el alta a ciertos campos antes descritos como Banco y numero de cuenta.",
+			"Cambio2": "la restriccion de eliminacion, en vez de poder eliminarse solo si se encuentran 'debe' o 'haber' en nulo, ahora solo podran eliminarse si se encuentra en 0"
+		},
+		"Registracion": {
+			"Eliminacion": "se elimanan las (A) de los campos que no se ingresaran realmente en una tabla."
+		},
+		"Modelo de datos": {
+			"Eliminacion": "Se elimina la relacion que va desde la tabla bienes de uso a pedido de reaprovisionamiento",
+			"Eliminacion2": "Se agrega el campo fecha de creacion al informe de recepcion"
+		},
+		"Base de datos": {
+			"Creacion de campo": "En la tabla 1_informe_recepcion : Se a�ade el campo fecha_creacion"
+		},
+		"Diccionario de datos": {
+			"Creacion de campo": "En la tabla 1_informe_recepcion : Se a�ade el campo fecha_creacion"
+		}
+	}
+}
