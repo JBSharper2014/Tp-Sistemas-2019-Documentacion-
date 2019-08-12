@@ -1,0 +1,43 @@
+{
+  "Compras": {
+    "Necesidades": {
+         "Modificacion": "Se finalizan las necesidades de compras"
+    },
+    "F1": {
+         "Control de proveedores" : "Se modificaron los campos de la tabla proveedores con respecto a la normalizacion de la direccion."
+    },
+
+    "Modelo de datos": {
+          "Eliminacion": "Se eliminan los campos y relaciones de codigo de producto y codigo de bien de uso de las tablas de cotizaciones (Por pedidos de reaprovisionamiento y por Solicitudes de compras",
+
+    },
+    "Base de datos": {
+          "Eliminacion de campo": "Se eliminan campos codigo de producto y codigo de bien de uso de las tablas cotizaciones por pedido de raprovisionamiento y cotizacion por solicitud de compras.",
+          "Eliminacion de relacion" :  "Dado la eliminacion de los campos anteriores, se elimina la llave foranea que unía a las tablas con eso campos.",
+          "Normalizacion": "tabla 1_proveedores recibe las modificaciones correspondientes descritas en modelo de datos: eliminacion del campo 'direccion fisica' y creacion de tablas para su correcta normalizacion."
+        }
+  },
+
+  "Ventas": {
+
+    "Necesidades": {
+          "Modificacion":  "Se finalizan las necesidades de ventas"
+    },
+    "Modelo de datos" : "Se ajusta modelo de datos para la normalizacion de la direccion",
+    "Base de datos" : "La tabla clientes es modificada para normalizar su direccion",
+    "F1" : "El f1 de administracion de clientes es afectado para transmitir los cambios de la normalizacion de la direccion."
+
+  },
+
+  "Cobros": {
+
+    "Necesidades": {
+          "Modificacion":  "Se finalizan las necesidades de cobros"
+    }
+  },
+
+  "Diccionario de datos": {
+    "Eliminacion de campo": "Se eliminan codigo de producto y codigo de solicitud, siguiedo las modificaciones citadas anteriormente.",
+    "Normalizacion" : "Se crean tablas con sus respectivos campos para normalizar las direcciones de las tablas 1_proveedores y 3_clientes"
+}
+}
