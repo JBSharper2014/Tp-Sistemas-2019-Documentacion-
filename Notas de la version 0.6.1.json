@@ -1,0 +1,19 @@
+{
+  "Compras" : {
+
+    "Modelo de datos" : 
+    {
+      "Cotizaciones": "La colision es solucionada, se añade otra tabla.",
+      "Ordenes de compra" : "La orden de compra deja de tener codigo de cotizacion, ahora las cotizaciones tienen codigo de orden de compra",
+      "NOTA" : "El campo orden de compra deberá aceptar nulls, puesto que la cotizacion se creará y aunque esta quizas nunca se utilice" 
+    },
+    "Base de datos" : 
+    {
+      "cotizacion": "Cambios sobre la base de datos para que quede acordea las modificaciones citadas",
+      "NOTA1" : "Se deberá volver a la semilla de identidad 1 e incremental 1 en la cotizacion afectada",
+      "NOTA2" : "Añadido en la presenta carpeta un diagrama sql-server explicando como ha quedado el esquema"
+    },
+    "Diccionario de datos" : "Efectuadas las modificaciones correspondientes para agregar la informacion descrita"
+
+  }
+}
