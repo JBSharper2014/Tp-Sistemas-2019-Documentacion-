@@ -1,0 +1,17 @@
+{
+  "Compras" : {
+
+    "Modelo de datos" : 
+    {
+      
+      "Ordenes de compra" : "Se eliminan campos superfluos: Codigo de proveedor, codigo de cotizacion y codigo de producto."
+       
+    },
+    "Base de datos" : 
+    {
+      "Modificacion" : "Se modifica la base de datos segun el diagrama descrito en la imagen adjunta"
+    },
+    "Diccionario de datos" : "Efectuadas las modificaciones correspondientes para agregar la informacion descrita"
+
+  }
+}
