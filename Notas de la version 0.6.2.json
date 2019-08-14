@@ -1,0 +1,18 @@
+{
+  "Compras" : {
+
+    "Modelo de datos" : 
+    {
+      "Cotizaciones": "Se hacen nuevas modificaciones para solucionar problemas de desambiguacion",
+      "Ordenes de compra" : "La orde de compra ahora tiene su propia tabla de muchos a muchos con cotizaciones, es eliminado de la tabla intermedia cotizacion con proveedores"
+       
+    },
+    "Base de datos" : 
+    {
+      "cotizacion": "Cambios sobre la base de datos para que quede acordea las modificaciones citadas",
+      "NOTA" : "Añadido en la presente carpeta un SEGUNDO diagrama sql-server explicando como ha quedado el esquema"
+    },
+    "Diccionario de datos" : "Efectuadas las modificaciones correspondientes para agregar la informacion descrita"
+
+  }
+}
