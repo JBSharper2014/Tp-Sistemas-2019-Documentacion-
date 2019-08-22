@@ -1,0 +1,17 @@
+{
+
+  "General" : "Creada una carpeta llamada BD, en donde se guardarán scripts y documentos referidos a esta",
+  "BD" : 
+  {
+    "Script" : "Agregados el script correspondiente para esta version",
+    "Dibujo ilustrativo" : "Agregado dibujo ilustrativo que refleja el circuito completo de una cotizacion y emision de solicitud de compras"
+  },
+
+  "Compras" : 
+  {
+    "Modelo de datos" : "Modificado para incluir los codigos de productos en las cotizaciones",
+    "Diccionario de datos" : "Modificado para reflejar cambio citado arriba",
+    "Base de datos" : "Modificado para reflejar los cambios"
+
+  }
+}
