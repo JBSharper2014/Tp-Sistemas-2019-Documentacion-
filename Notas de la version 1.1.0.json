@@ -1,0 +1,20 @@
+{
+
+
+  "Compras" : 
+  {
+    "Remito" : "Remito queda por completo eliminado, las funcionalidades que estaban asociadas se pasan a otras tablas",
+    "Informe de recepcion" : "Ahora el informe de recepcion tendrá como campoo numero de remito",
+    "Orden de compras general" : "Se modifica a tal punto que de ahora en mas cada cotizacion tenga una sola orden de compras",
+    "Orden de compras F1" : "Como un pr o sc tienen muchos productos y ahora cada produicto tendrá muchas cotizaciones, pero cada cotizacion solo tendrá una orden de compras [...] ",
+    "  ''' " :  "[...] La consulta para poder crear ordenes de compra sobre pc o sc deberá NO LISTAR los productos  de SC o PR que ya tienen una orden de compra generada",
+
+    "Bancos de proveedores" : "Ya no existen los bancos, ahora los proveedores solamente podrán tener multiples CBU , la tabla llamada bancos proveedor, cambia a llamarse cbu proveedor",
+
+    "Registracion" : "Con la eliminacion de remito, la entidad registracion deberá derivar sus datos de consultas a los pr o sc para funcionar",
+
+    "Todos los documentos que sufrieron modificaciones por la eliminacion de remitos" : "F1, Tabla estimulo respuesta, necesidades, DFD 0 y 1, DER, Modelo de datos, base de datos y diccionario de datos.",
+
+    "Diccionario de datos, modelo de datos y base de datos" : "modificados para reflejar los cambios, script nuevo en la carpeta correspondiente."
+  }
+}
