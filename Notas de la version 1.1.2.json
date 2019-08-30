@@ -1,0 +1,11 @@
+{
+
+  "Compras" :
+   {
+      "Stock" : "Ahora stock tiene un campo que se llama precios que acepta nulos, puesto que ese campo lo deberá llenar encargado de ventas",
+      "Direccion" : "Corregidos tipo de datos en tabla direccion"
+
+   },
+
+   "Ventas" : "Eliminada tabla lista de precios"
+}
