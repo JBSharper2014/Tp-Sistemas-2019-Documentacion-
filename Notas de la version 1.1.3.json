@@ -1,0 +1,18 @@
+{
+
+  
+   "Ventas" : {
+
+      "F1" : "Actualizado con cambios menores.",
+
+      "Borrado de tabla" :"3_stock_rem_venta por redundancia de datos",
+      "Eliminacion de campo" : "Campo cod_dev borrado de remito por venta", 
+      "Modificado de campo":"tabla 3_stock_venta pasa a tener campo cantidad, el mismo se elimina de pedido_venta",
+      "Modelo de datos" : "Actualizado con cambios descritos."
+   },
+
+   
+   "Diccionario de datos" : "Actualizado con los cambios descritos"
+
+   
+}
