@@ -1,0 +1,16 @@
+{
+
+  
+   "Ventas" : {
+
+
+      "Factura" : "Se eliminó la funcionalidad de modificar observacion para simplificar el trabajo",
+      "Base de datos":" Se eliminó el campo numero de la entidad factura por venta"
+
+   },
+
+   
+   "Diccionario de datos, modelo de datos y F1" : "Actualizados con los cambios descritos"
+
+   
+}
