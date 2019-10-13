@@ -1,0 +1,17 @@
+{
+
+  
+  "BD" : {
+    
+  
+	"Pagos y Compras" : "Tuve que cambiar el valor aceptado del campo CBU de int a decimal (25 0) Porque es un numero muuuy largo",
+  "Pagos" : "Agregado el campo saldo en cuenta bancaria de la empresa",
+  "Compras" : "Habia un error en la tabla que tenia los CBUS del proveedor, lo corregi."
+  
+  },
+
+  "F1 y Modelos de datos" : "Actualizados para reflejar las modificaciones."
+   
+  
+
+}
