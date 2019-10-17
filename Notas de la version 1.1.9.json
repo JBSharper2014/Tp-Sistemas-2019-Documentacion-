@@ -1,0 +1,16 @@
+{
+
+  
+  "BD" : {
+    
+  
+	"Compras" : "Borrado campo nombre de proveedor de factura",
+        "Pagos y compras" : "Modificaciones menores, agregado un campo identidad y modificado otro para que acepte nulls"
+	
+  
+  },
+
+  "F1 y Modelos de datos" : "Actualizados para reflejar las modificaciones.",
+   
+ 
+}
